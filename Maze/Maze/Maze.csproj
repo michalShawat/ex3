@@ -81,10 +81,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="home.png" />
     <Content Include="HomePage.css" />
     <Content Include="HomePage.html" />
     <Content Include="LoginPage.css" />
     <Content Include="LoginPage.html" />
+    <Content Include="main.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
