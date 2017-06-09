@@ -1,22 +1,32 @@
 ﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" type="text/css" href="bootstrap/LoginPage.css">
+    <link rel="stylesheet" type="text/css" href="LoginPage.css">
     <meta charset="utf-8" />
     <title></title>
 </head>
 <body>
-    <div>
-        <h3>Log in</h3>
-        <p>Use a local account to log in.</p>
+    <div class="topnav" id="myTopnav">
+        <a href="#home">Maze</a>
+        <a href="#news">Single Game</a>
+        <a href="#contact">MultiPlayer Game</a>
+        <a href="#about">Settings</a>
+        <a herf="#about">User Rankings</a>
     </div>
-    <form action="/action_page.php">
-        First name:<br />
-        <input type="text" name="Username" value=""><br />
-        Last name:<br />
-        <input type="text" name="Password" value=""><br /><br />
-        <input type="submit" value="Login">
-    </form>
-    <a href="url">Register as a new user</a>
+    <div>
+        <img src="login.jpg" style="width:1350px; height:180px;">
+        <div>
+            <h3>Log in</h3>
+            <p>Use a local account to log in.</p>
+        </div>
+        <form action="/action_page.php">
+            First name:<br />
+            <input type="text" name="Username" value=""><br />
+            Last name:<br />
+            <input type="text" name="Password" value=""><br /><br />
+            <input type="submit" value="Login">
+        </form>
+        <a href="url">Register as a new user</a>
+    </div>
 </body>
 </html>
