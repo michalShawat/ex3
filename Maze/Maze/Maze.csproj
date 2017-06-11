@@ -88,6 +88,9 @@
     <Content Include="LoginPage.css" />
     <Content Include="LoginPage.html" />
     <Content Include="main.png" />
+    <Content Include="MenuPlugIn.css" />
+    <Content Include="jQuary.Maze.js" />
+    <Content Include="MenuPlugIn.html" />
     <Content Include="MultiPlayerMenuPage.html" />
     <Content Include="RegisterPage.css" />
     <Content Include="RegisterPage.html" />

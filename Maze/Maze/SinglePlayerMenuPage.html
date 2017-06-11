@@ -5,42 +5,49 @@
     <link rel="stylesheet" type="text/css" href="RegisterPage.css">
 </head>
 <body>
-    <div class="container body-content">
-        <h2>Single Player Game</h2><hr />
-        <div class="col-sm-4 form-horizontal">
-            <div class="form-group">
-                <label for="mazeName" class="col-sm-2 control-label">Name</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="mazeName" />
-                </div><br />
-                <label for="mazeRows" class="col-sm-2 control-label">Rows</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="mazeRows" />
-                </div><br />
-                <label for="mazeCols" class="col-sm-2 control-label">Cols</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="mazeCols" />
-                </div><br />
-            </div>
-           
-                <a href='#' class='button'>Start New Game</a>
-            <div><br /><br />
-                <label for="SearchAlgo" class="col-sm-2 control-label">SearchAlgo</label>
-                <select>
-                    <option value="BFS">BFS</option>
-                    <option value="DFS">DFS</option>
-                </select>
-            </div>
-            <br />
-            <a href='#' class='button'>Solve Maze</a>  
-            
-        </div>
-        
-        <!--<div class="col-sm-8 text-center">
-            <canvas id="mazeCanvas" tabindex="1" class="maze-board" width="500"
-                    height="500"></canvas>
-        </div>-->
+    <div id="myTopnav">
+        <script src="Scripts/jquery-3.1.1.js"></script>
+    <script>
+        $("#myTopnav").load("MenuPlugIn.html");
+    </script>
     </div>
+        <div class="container body-content">
+            <h2>Single Player Game</h2><hr />
+            <div class="col-sm-4 form-horizontal">
+                <div class="form-group">
+                    <label for="mazeName" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="mazeName" />
+                    </div><br />
+                    <label for="mazeRows" class="col-sm-2 control-label">Rows</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="mazeRows" />
+                    </div><br />
+                    <label for="mazeCols" class="col-sm-2 control-label">Cols</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="mazeCols" />
+                    </div><br />
+                </div>
+
+                <a href='#' class='button'>Start New Game</a>
+                <div>
+                    <br /><br />
+                    <label for="SearchAlgo" class="col-sm-2 control-label">SearchAlgo</label>
+                    <select>
+                        <option value="BFS">BFS</option>
+                        <option value="DFS">DFS</option>
+                    </select>
+                </div>
+                <br />
+                <a href='#' class='button'>Solve Maze</a>
+
+            </div>
+
+            <!--<div class="col-sm-8 text-center">
+                <canvas id="mazeCanvas" tabindex="1" class="maze-board" width="500"
+                        height="500"></canvas>
+            </div>-->
+        </div>
 
 </body>
 </html>
