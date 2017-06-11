@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MazeGeneratorLib">
+      <HintPath>..\..\..\..\..\Downloads\מטלה 1-20170330\MazeGeneratorLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MazeLib">
+      <HintPath>..\..\..\..\..\Downloads\מטלה 1-20170330\MazeLib.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -87,7 +93,7 @@
     <Content Include="login.jpg" />
     <Content Include="LoginPage.css" />
     <Content Include="LoginPage.html" />
-    <Content Include="main.png" />
+    <Content Include="Maze.dll" />
     <Content Include="MenuPlugIn.css" />
     <Content Include="jQuary.Maze.js" />
     <Content Include="MenuPlugIn.html" />
@@ -99,6 +105,7 @@
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="SearchAlgorithmsLib.dll" />
     <Content Include="SinglePlayerMenuPage.css" />
     <Content Include="SinglePlayerMenuPage.html" />
     <Content Include="Web.config">
@@ -107,9 +114,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\SingleController.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IModel.cs" />
+    <Compile Include="Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -127,7 +138,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
