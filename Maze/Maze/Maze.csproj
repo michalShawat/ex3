@@ -88,6 +88,7 @@
     <Content Include="LoginPage.css" />
     <Content Include="LoginPage.html" />
     <Content Include="main.png" />
+    <Content Include="MultiPlayerMenuPage.html" />
     <Content Include="RegisterPage.css" />
     <Content Include="RegisterPage.html" />
     <Content Include="SinglePlayerMenuPage.css" />
