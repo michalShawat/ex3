@@ -1,7 +1,7 @@
 ﻿using System.Net.Sockets;
 using MazeLib;
 
-namespace Server
+namespace Maze.Server
 {
     using Maze = MazeLib.Maze;
 
