@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CompareMazeSolvers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\CompareMazeSolvers.dll</HintPath>
+    </Reference>
     <Reference Include="MazeGeneratorLib">
       <HintPath>..\..\..\..\..\Downloads\מטלה 1-20170330\MazeGeneratorLib.dll</HintPath>
     </Reference>
@@ -53,6 +57,10 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SearchAlgorithmsLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\SearchAlgorithmsLib.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -86,6 +94,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ModelFromEx1\CompareMazeSolvers.dll" />
     <Content Include="Global.asax" />
     <Content Include="home.png" />
     <Content Include="HomePage.css" />
@@ -93,7 +102,8 @@
     <Content Include="login.jpg" />
     <Content Include="LoginPage.css" />
     <Content Include="LoginPage.html" />
-    <Content Include="Maze.dll" />
+    <Content Include="ModelFromEx1\Maze.dll" />
+    <Content Include="ModelFromEx1\MazeGeneratorLib.dll" />
     <Content Include="MenuPlugIn.css" />
     <Content Include="jQuary.Maze.js" />
     <Content Include="MenuPlugIn.html" />
@@ -105,7 +115,7 @@
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
-    <Content Include="SearchAlgorithmsLib.dll" />
+    <Content Include="ModelFromEx1\SearchAlgorithmsLib.dll" />
     <Content Include="SinglePlayerMenuPage.css" />
     <Content Include="SinglePlayerMenuPage.html" />
     <Content Include="Web.config">
@@ -115,12 +125,15 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\SingleController.cs" />
-    <Compile Include="Game.cs" />
+    <Compile Include="ModelFromEx1\ClientHandler.cs" />
+    <Compile Include="ModelFromEx1\Game.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="IModel.cs" />
-    <Compile Include="Model.cs" />
+    <Compile Include="ModelFromEx1\IClientHandler.cs" />
+    <Compile Include="ModelFromEx1\IController.cs" />
+    <Compile Include="ModelFromEx1\IModel.cs" />
+    <Compile Include="ModelFromEx1\Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

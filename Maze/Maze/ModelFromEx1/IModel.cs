@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Net.Sockets;
-using MazeLib;
-using SearchAlgorithmsLib;
-
-namespace Server
+﻿
+namespace Maze.Server
 {
+    using System.Collections.Generic;
+    using System.Net.Sockets;
+    using MazeLib;
+    using SearchAlgorithmsLib;
+    using Maze = MazeLib.Maze;
+
     /// <summary>
     /// an interface of the model 
     /// </summary>

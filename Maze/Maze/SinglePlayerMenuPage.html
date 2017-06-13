@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="RegisterPage.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 <body>
     <div id="myTopnav">
@@ -29,7 +31,7 @@
                     </div><br />
                 </div>
 
-                <a href='#' class='button'>Start New Game</a>
+                <a href='#' class="button">Start New Game</a>
                 <div>
                     <br /><br />
                     <label for="SearchAlgo" class="col-sm-2 control-label">SearchAlgo</label>
@@ -39,10 +41,11 @@
                     </select>
                 </div>
                 <br />
-                <a href='#' class='button'>Solve Maze</a>
+                <a href="#" class="button">Solve Maze</a>
 
             </div>
-
+            <canvas id="mazeCanvas" width="300" height="300" style="border:2px black solid"></canvas> 
+             <script src="jQuary.Maze.js"></script>
             <!--<div class="col-sm-8 text-center">
                 <canvas id="mazeCanvas" tabindex="1" class="maze-board" width="500"
                         height="500"></canvas>
