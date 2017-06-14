@@ -5,7 +5,7 @@
     <link rel="shortcut icon" href="#"/>
     <link rel="stylesheet" type="text/css" href="RegisterPage.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    <script src="jQuary.Maze.js"></script>
 </head>
 <body>
     <div id="myTopnav">
@@ -32,22 +32,19 @@
                     </div><br />
                 </div>
                 
-                <script>
+                <script type ="text/javascript">
                     $(document).ready(function() {
-
-                        $("#startLink").click(function (event) { console.log("IFFFFAAAAT"); }); 
-                        var name = document.getElementById("mazeName").value;
-                        var rows = document.getElementById("mazeRows").value;
-                        var cols = document.getElementById("mazeCols").value;
-                        console.log(name);
-                        //$.getJSON("api/generate/" + name + "/" + rows + "/" + cols, function (data) {
-                        //    console.log("IFFFFAAAAT");
-                        //    console.log(data);
-                        //});
-                        //  };
-                        //  var hihi = "api/generate";
+                        $("#startLink").click(function(event) {
+                            var name = $("#mazeName").val();
+                            var rows = $("#mazeRows").val();
+                            var cols = $("#mazeCols").val();
+                            $.getJSON("api/generate/" + name + "/" + rows + "/" + cols, function (data) {
+                                $("#mazeCanvas").drawMaze(data);
+                            });
+                            alert("done");
                     });
-
+                    });
+                    
                 </script>
 
                 <a href="#" class="button" id="startLink" >Start New Game</a>
@@ -65,7 +62,7 @@
 
             </div>
             <canvas id="mazeCanvas" width="300" height="300" style="border:2px black solid"></canvas> 
-             <script src="jQuary.Maze.js"></script>
+            
             </div>
 </body>
 </html>

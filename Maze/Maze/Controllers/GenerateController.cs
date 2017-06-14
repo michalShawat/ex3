@@ -29,10 +29,11 @@ namespace Maze.Controllers
         }
 
         // GET: api/Single/5
-        public string GetMaze(string name, int rows, int cols)
+        public JObject GetMaze(string name, int rows, int cols)
         {
             Maze maze = this.myModel.GenerateMaze(name, rows, cols);
-            return maze.ToJSON();
+            JObject obj = JObject.Parse(maze.ToJSON());
+            return obj;
         }
 
         // POST: api/Single
