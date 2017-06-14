@@ -5,11 +5,10 @@ using System.Net.Sockets;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace Server
+namespace Maze.ModelFromEx1
 {
     using System.Threading;
-
-    using Maze.Server;
+    
 
     /// <summary>
     /// class that handel the interaction between the server and the client 

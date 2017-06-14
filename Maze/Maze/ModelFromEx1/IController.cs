@@ -1,8 +1,7 @@
 ﻿using System.Net.Sockets;
 
-namespace Maze.Server
+namespace Maze.ModelFromEx1
 {
-    using global::Server;
 
     /// <summary>
     /// an interface of the controller 

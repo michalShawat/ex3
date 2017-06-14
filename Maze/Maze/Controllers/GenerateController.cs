@@ -7,8 +7,21 @@ using System.Web.Http;
 
 namespace Maze.Controllers
 {
-    public class SingleController : ApiController
+    using Maze.ModelFromEx1;
+
+    using MazeLib;
+
+    using Newtonsoft.Json.Linq;
+
+    public class GenerateController : ApiController
     {
+        private IModel myModel;
+
+        public GenerateController()
+        {
+            this.myModel = new Model();
+        }
+
         // GET: api/Single
         public IEnumerable<string> Get()
         {
@@ -16,9 +29,10 @@ namespace Maze.Controllers
         }
 
         // GET: api/Single/5
-        public string Get(int id)
+        public string GetMaze(string name, int rows, int cols)
         {
-            return "value";
+            Maze maze = this.myModel.GenerateMaze(name, rows, cols);
+            return maze.ToJSON();
         }
 
         // POST: api/Single

@@ -124,7 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\SingleController.cs" />
+    <Compile Include="Controllers\GenerateController.cs" />
     <Compile Include="ModelFromEx1\ClientHandler.cs" />
     <Compile Include="ModelFromEx1\Game.cs" />
     <Compile Include="Global.asax.cs">

@@ -1,6 +1,6 @@
 ﻿using System.Net.Sockets;
 
-namespace Server
+namespace Maze.ModelFromEx1
 {
     /// <summary>
     /// an interface of the client handler
