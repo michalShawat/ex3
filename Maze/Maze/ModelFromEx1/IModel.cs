@@ -1,5 +1,5 @@
 ﻿
-namespace Maze.Server
+namespace Maze.ModelFromEx1
 {
     using System.Collections.Generic;
     using System.Net.Sockets;

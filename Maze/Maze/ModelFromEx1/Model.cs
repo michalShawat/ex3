@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 using SearchAlgorithmsLib;
 
 
-namespace Maze.Server
+namespace Maze.ModelFromEx1
 {
     using Maze = MazeLib.Maze;
 
@@ -21,17 +21,11 @@ namespace Maze.Server
     public class Model : IModel
     {
         /// <summary>
-        /// The controller
-        /// </summary>
-        //private IController con;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="Model"/> class.
         /// </summary>
         /// <param name="con">The controller.</param>
-        public Model(IController con)
+        public Model()
         {
-          //  this.con = con;
         }
 
         /// <summary>
