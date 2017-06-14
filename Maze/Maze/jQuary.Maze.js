@@ -10,7 +10,8 @@
          for (var j = 0; j < cols; j++) {
               if (maze[i][j] == 1) {
                    context.fillRect(cellWidth * j, cellHeight * i, cellWidth, cellHeight);
-              }
+             }
+
          }
     }
     return this;};

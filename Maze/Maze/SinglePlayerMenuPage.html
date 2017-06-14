@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <link rel="shortcut icon" href="#" />
     <link rel="stylesheet" type="text/css" href="RegisterPage.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -12,6 +13,7 @@
     <script>
         $("#myTopnav").load("MenuPlugIn.html");
     </script>
+
     </div>
         <div class="container body-content">
             <h2>Single Player Game</h2><hr />
@@ -35,6 +37,7 @@
                 <div>
                     <br /><br />
                     <label for="SearchAlgo" class="col-sm-2 control-label">SearchAlgo</label>
+                    <br />
                     <select>
                         <option value="BFS">BFS</option>
                         <option value="DFS">DFS</option>
@@ -46,10 +49,7 @@
             </div>
             <canvas id="mazeCanvas" width="300" height="300" style="border:2px black solid"></canvas> 
              <script src="jQuary.Maze.js"></script>
-            <!--<div class="col-sm-8 text-center">
-                <canvas id="mazeCanvas" tabindex="1" class="maze-board" width="500"
-                        height="500"></canvas>
-            </div>-->
+           
         </div>
 
 </body>
