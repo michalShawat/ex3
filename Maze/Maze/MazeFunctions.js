@@ -1,5 +1,11 @@
 ﻿$(document).ready(function() {
-    $("#startLink").click(function(event) {
+    $("#startLink").click(function (event) {
+
+
+          $('#myLoader').show();
+        
+
+
         var name = $("#mazeName").val();
         var rows = $("#mazeRows").val();
         var cols = $("#mazeCols").val();
@@ -29,6 +35,7 @@
                     //}
                     //    // a callback function which is invoked after each move
                 );
+                $('#myLoader').hide();
                 document.title = name;
             });
     });

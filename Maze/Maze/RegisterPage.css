@@ -80,6 +80,8 @@ canvas {
     border-radius: 50%;
     width: 120px;
     height: 120px;
+    margin-left: 41em;
+    margin-top: -20em;
     animation: spin 2s linear infinite;
 }
 
