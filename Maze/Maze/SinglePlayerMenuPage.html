@@ -31,6 +31,9 @@
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="mazeCols"/>
             </div><br/>
+            
+            <img id="marco" src="marco.jpg" style="display: none"/>
+            <img id="mother" src="mother.jpg" style="display: none" />
         </div>
         <script src="Plugin.Maze.js"></script>
         <script type="text/javascript">
@@ -47,12 +50,8 @@
                             var startCol = data.Start.Col; // initial position of the player
                             var exitRow = data.End.Row;
                             var exitCol = data.End.Col; // the exit position
-                            //var myImage = new Image(100, 200);
-                            //myImage.src = 'picture.jpg';
-                            var playerImage = new Image(); // player's icon (of type Image)
-                            playerImage.src = "marco.jpg";
-                            var exitImage = new Image(); // player's icon (of type Image)
-                            exitImage.src = "mother.jpg";
+                            var playerImage = document.getElementById("marco"); // player's icon (of type Image)
+                            var exitImage = document.getElementById("mother");
                             var v = $("#mazeCanvas").drawMaze(
                                 mazeData, // the matrix containing the maze cells
                                 rows,
@@ -72,8 +71,6 @@
                         });
                 });
             });
-
-
         </script>
 
         <a href="#" class="button" id="startLink">Start New Game</a>
