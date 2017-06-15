@@ -23,11 +23,12 @@
                     exitCol, // the exit position
                     playerImage, // player's icon (of type Image)
                     exitImage // exit's icon (of type Image)
-                    //true, // is the board enabled (i.e., player can move)
+                    //true // is the board enabled (i.e., player can move)
                     //function(direction, playerRow, playerCol) {
+                        
+                    //}
                     //    // a callback function which is invoked after each move
                 );
-
                 document.title = name;
             });
     });
