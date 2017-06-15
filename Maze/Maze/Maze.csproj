@@ -105,7 +105,7 @@
     <Content Include="ModelFromEx1\Maze.dll" />
     <Content Include="ModelFromEx1\MazeGeneratorLib.dll" />
     <Content Include="MenuPlugIn.css" />
-    <Content Include="jQuary.Maze.js" />
+    <Content Include="Plugin.Maze.js" />
     <Content Include="MenuPlugIn.html" />
     <Content Include="MultiPlayerMenuPage.html" />
     <Content Include="RegisterPage.css" />
