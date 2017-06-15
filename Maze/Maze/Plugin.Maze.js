@@ -46,11 +46,9 @@
                     context.fillRect(cellWidth * j, cellHeight * i, cellWidth, cellHeight);
                 }
             }
-        }``
-        var img = document.getElementById("marco.jpg");
-        ctx.drawImage(img, 10, 10);
-        context.drawImage(start.src, cellWidth * startCol, cellHeight * startRow, cellWidth, cellHeight);
-        context.drawImage(end.src, cellWidth * startCol, cellHeight * startRow, cellWidth, cellHeight);
+        }
+        //context.drawImage(start.src, cellWidth * startCol, cellHeight * startRow, cellWidth, cellHeight);
+        //context.drawImage(end.src, cellWidth * startCol, cellHeight * startRow, cellWidth, cellHeight);
         return this;
     };
 })(jQuery);
