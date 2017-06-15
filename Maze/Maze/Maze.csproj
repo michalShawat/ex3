@@ -96,6 +96,7 @@
   <ItemGroup>
     <Content Include="marco.jpg" />
     <Content Include="MazeFunctions.js" />
+    <Content Include="MazePlugin.html" />
     <Content Include="ModelFromEx1\CompareMazeSolvers.dll" />
     <Content Include="Global.asax" />
     <Content Include="home.png" />

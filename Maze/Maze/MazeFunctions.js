@@ -1,10 +1,10 @@
-﻿$(document).ready(function () {
-    $("#startLink").click(function (event) {
+﻿$(document).ready(function() {
+    $("#startLink").click(function(event) {
         var name = $("#mazeName").val();
         var rows = $("#mazeRows").val();
         var cols = $("#mazeCols").val();
         $.getJSON("api/generate/" + name + "/" + rows + "/" + cols,
-            function (data) {
+            function(data) {
                 //var mazemaze = $("#mazeCanvas").drawMaze(data);
                 var mazeData = data.Maze; // the matrix containing the maze cells
                 var startRow = data.Start.Row;
@@ -31,4 +31,8 @@
                 document.title = name;
             });
     });
+
+    document.onkeydown = function (e) {
+        $("#mazeCanvas").move(e);
+    }
 });

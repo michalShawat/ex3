@@ -1,26 +1,8 @@
-﻿//(function ($) {
-//    $.fn.drawMaze = function (maze) {
-//    var mazeCanvas = this.get(0);
-//    var context = mazeCanvas.getContext("2d");
-//    var realMaze = maze.toJSON();
-//    var hi = realMaze[0];
-//    var rows = maze.rows;
-//    var cols = maze.cols;
-//    var cellWidth = mazeCanvas.width / cols;
-//    var cellHeight = mazeCanvas.height / rows;
-//    for (var i = 0; i < rows; i++) {
-//         for (var j = 0; j < cols; j++) {
-//              if (maze[i][j] == 1) {
-//                   context.fillRect(cellWidth * j, cellHeight * i, cellWidth, cellHeight);
-//             }
-
-//         }
-//    }
-//    return this;};
-//})(jQuery);
-
-
-(function ($) {
+﻿(function ($) {
+    var curCol, curRow;
+    var mazeCanvas, context;
+    var cellWidth, cellHeight;
+    var playerImg;
     $.fn.drawMaze = function(mazeData, // the matrix containing the maze cells
         rows,
         cols,
@@ -31,11 +13,14 @@
         playerImage, // player's icon (of type Image)
         exitImage // exit's icon (of type Image)
        // true, // is the board enabled (i.e., player can move)
-        ){
-        var mazeCanvas = this.get(0);
-        var context = mazeCanvas.getContext("2d");
-        var cellWidth = mazeCanvas.width / cols;
-        var cellHeight = mazeCanvas.height / rows;
+        ) {
+        playerImg = playerImage;
+        curCol = startCol;
+        curRow = startRow;
+        mazeCanvas = this.get(0);
+        context = mazeCanvas.getContext("2d");
+        cellWidth = mazeCanvas.width / cols;
+        cellHeight = mazeCanvas.height / rows;
         for (var i = 0; i < rows; i++) {
             for (var j = 0; j < cols; j++) {
                 if (mazeData[i*rows+j] == 1) {
@@ -43,8 +28,29 @@
                 }
             }
         }
-        context.drawImage(playerImage, cellWidth * startCol, cellHeight * startRow, cellHeight, cellWidth );
+        context.drawImage(playerImage, cellWidth * startCol, cellHeight * startRow, cellHeight, cellWidth);
         context.drawImage(exitImage, cellWidth * exitCol, cellHeight * exitRow, cellHeight, cellWidth);
         return this;
+    };
+
+    $.fn.move = function (e) {
+        switch (e.keyCode) {
+        case 37:
+            //left
+            context.drawImage(playerImg, cellWidth * (curCol - 1), cellHeight * curRow, cellHeight, cellWidth);
+            break;
+        case 38:
+            //up
+            context.drawImage(playerImg, cellWidth * curCol, cellHeight * (curRow - 1), cellHeight, cellWidth);
+            break;
+        case 39:
+            //right
+            context.drawImage(playerImg, cellWidth * (curCol+1), cellHeight * curRow, cellHeight, cellWidth);
+            break;
+        case 40:
+            //down
+            context.drawImage(playerImg, cellWidth * curCol, cellHeight * (curRow+1), cellHeight, cellWidth);
+            break;
+        }
     };
 })(jQuery);
