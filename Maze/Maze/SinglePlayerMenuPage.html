@@ -1,11 +1,12 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <title id="myTitle">Single Player</title>
+    <meta charset="utf-8"/>
     <link rel="shortcut icon" href="#"/>
     <link rel="stylesheet" type="text/css" href="RegisterPage.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+
 </head>
 <body>
 <div id="myTopnav">
@@ -40,7 +41,6 @@
                     var cols = $("#mazeCols").val();
                     $.getJSON("api/generate/" + name + "/" + rows + "/" + cols,
                         function(data) {
-                            var ifat = data.toJSON;
                             //var mazemaze = $("#mazeCanvas").drawMaze(data);
                             var mazeData = data.Maze; // the matrix containing the maze cells
                             var startRow = data.Start.Row;
@@ -67,7 +67,8 @@
                                 //function(direction, playerRow, playerCol) {
                                 //    // a callback function which is invoked after each move
                             );
-                            alert("done");
+
+                            document.title = name;
                         });
                 });
             });

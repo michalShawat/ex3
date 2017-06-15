@@ -47,8 +47,8 @@
                 }
             }
         }
-        context.drawImage(start.src, cellWidth * startCol, cellHeight * startRow, cellWidth, cellHeight);
-        context.drawImage(end.src, cellWidth * startCol, cellHeight * startRow, cellWidth, cellHeight);
+        //context.drawImage(start.src, cellWidth * startCol, cellHeight * startRow, cellWidth, cellHeight);
+        //context.drawImage(end.src, cellWidth * startCol, cellHeight * startRow, cellWidth, cellHeight);
         return this;
     };
 })(jQuery);
