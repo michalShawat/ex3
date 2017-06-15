@@ -34,11 +34,21 @@
             
             <img id="marco" src="marco.jpg" style="display: none"/>
             <img id="mother" src="mother.jpg" style="display: none" />
+            <div class="loader" style="display: none"></div>
         </div>
+
         <script src="Plugin.Maze.js"></script>
         <script src="MazeFunctions.js"></script>
 
-        <a href="#" class="button" id="startLink">Start New Game</a>
+        <a href="#" class="button" onclick="ClickLoad()" id="startLink">Start New Game</a>
+        <script type="text/javascript">
+            function ClickLoad() {
+                $(#'button').click(function () {
+                    $('#load').show();
+                    return true;
+                });
+             }
+        </script>
 
         <div>
             <br/><br/>
@@ -52,7 +62,9 @@
         <a href="#" class="button">Solve Maze</a>
 
     </div>
-    <canvas id="mazeCanvas" width="500" height="500" style="border: 2px black solid"></canvas>
+    <canvas id="mazeCanvas" width="500" height="500" style="border: 2px black solid">
+        </canvas>
+    
 
 </div>
 </body>
