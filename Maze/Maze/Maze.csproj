@@ -94,6 +94,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="marco.jpg" />
     <Content Include="ModelFromEx1\CompareMazeSolvers.dll" />
     <Content Include="Global.asax" />
     <Content Include="home.png" />
@@ -105,6 +106,7 @@
     <Content Include="ModelFromEx1\Maze.dll" />
     <Content Include="ModelFromEx1\MazeGeneratorLib.dll" />
     <Content Include="MenuPlugIn.css" />
+    <Content Include="mother.jpg" />
     <Content Include="Plugin.Maze.js" />
     <Content Include="MenuPlugIn.html" />
     <Content Include="MultiPlayerMenuPage.html" />
