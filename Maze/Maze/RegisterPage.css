@@ -67,3 +67,9 @@ label {
 select {
     margin-left: 6.5em;
 }
+
+canvas {
+    margin-left: 30em;
+    margin-top: -20em;
+    display: block;
+}
