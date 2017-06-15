@@ -39,7 +39,7 @@
                 document.title = name;
             });
     });
-
+    
     document.onkeydown = function (e) {
         $("#mazeCanvas").move(e);
     }

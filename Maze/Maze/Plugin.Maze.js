@@ -1,6 +1,7 @@
 ﻿(function ($) {
     var rows, cols;
     var curCol, curRow;
+    var endCol, endRow;
     var mazeCanvas, context;
     var cellWidth, cellHeight;
     var playerImg, mazeStr;
@@ -16,6 +17,8 @@
     ) {
         cols = myCols;
         rows = myRows;
+        endCol = exitCol;
+        endRow = exitRow;
         mazeStr = mazeData;
         playerImg = playerImage;
         curCol = startCol;
@@ -36,7 +39,7 @@
         return this;
     };
 
-    $.fn.move = function(e) {
+    $.fn.move = function (e) {
         switch (e.keyCode) {
         case 37:
             //left
@@ -44,6 +47,9 @@
                 context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
                 curCol = curCol - 1;
                 context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
+                    if (curCol == endCol && curRow == endRow) {
+                        alert("you won!");
+                    }
             }
             break;
         case 38:
@@ -53,6 +59,9 @@
                 context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
                 curRow = curRow - 1;
                 context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
+                if (curCol == endCol && curRow == endRow) {
+                        alert("you won!");
+                    }
             }
             break;
         case 39:
@@ -62,6 +71,9 @@
                 context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
                 curCol = curCol + 1;
                 context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
+                    if (curCol == endCol && curRow == endRow) {
+                        alert("you won!");
+                    }
             }
             break;
         case 40:
@@ -71,9 +83,13 @@
                 context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
                 curRow = curRow + 1;
                 context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
+                    if (curCol == endCol && curRow == endRow) {
+                        alert("you won!");
+                    }
             }
             break;
         }
+        
     };
 
 })(jQuery);
