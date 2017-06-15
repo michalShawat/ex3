@@ -36,10 +36,6 @@
         var context = mazeCanvas.getContext("2d");
         var cellWidth = mazeCanvas.width / cols;
         var cellHeight = mazeCanvas.height / rows;
-        var start = new Image();
-        start.src = playerImage;
-        var end = new Image();
-        end.src = exitImage;
         for (var i = 0; i < rows; i++) {
             for (var j = 0; j < cols; j++) {
                 if (mazeData[i*rows+j] == 1) {
@@ -47,8 +43,8 @@
                 }
             }
         }
-        //context.drawImage(start.src, cellWidth * startCol, cellHeight * startRow, cellWidth, cellHeight);
-        //context.drawImage(end.src, cellWidth * startCol, cellHeight * startRow, cellWidth, cellHeight);
+        context.drawImage(playerImage, cellWidth * startCol, cellHeight * startRow, cellHeight, cellWidth );
+        context.drawImage(exitImage, cellWidth * exitCol, cellHeight * exitRow, cellHeight, cellWidth);
         return this;
     };
 })(jQuery);
