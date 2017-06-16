@@ -36,13 +36,13 @@ namespace Maze.Controllers
             return obj;
         }
 
-        // GET: api/Single/mazeName
-        public JObject GetSolve(string name, int rows, int cols)
-        {
-            Maze maze = this.myModel.GenerateMaze(name, rows, cols);
-            JObject obj = JObject.Parse(maze.ToJSON());
-            return obj;
-        }
+        //// GET: api/Single/mazeName
+        //public JObject GetSolve(string name, int rows, int cols)
+        //{
+        //    Maze maze = this.myModel.GenerateMaze(name, rows, cols);
+        //    JObject obj = JObject.Parse(maze.ToJSON());
+        //    return obj;
+        //}
 
         // POST: api/Single
         public void Post([FromBody]string value)
