@@ -4,8 +4,6 @@
 
           $('#myLoader').show();
         
-
-
         var name = $("#mazeName").val();
         var rows = $("#mazeRows").val();
         var cols = $("#mazeCols").val();
@@ -40,7 +38,7 @@
             });
     });
     
-    document.onkeydown = function (e) {
-        $("#mazeCanvas").move(e);
+            $("#mazeCanvas").move(e);
+
     }
 });

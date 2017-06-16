@@ -40,16 +40,17 @@
     };
 
     $.fn.move = function (e) {
+
         switch (e.keyCode) {
+ 
         case 37:
             //left
                 if (mazeStr[(curRow * rows) + curCol - 1] != 1 && (curCol - 1) >= 0) {
                 context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
                 curCol = curCol - 1;
                 context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
-                    if (curCol == endCol && curRow == endRow) {
-                        alert("you won!");
-                    }
+                if (curCol == endCol && curRow == endRow) {
+                    alert("you won!");
             }
             break;
         case 38:
@@ -60,8 +61,7 @@
                 curRow = curRow - 1;
                 context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
                 if (curCol == endCol && curRow == endRow) {
-                        alert("you won!");
-                    }
+                    alert("you won!");
             }
             break;
         case 39:
@@ -71,9 +71,8 @@
                 context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
                 curCol = curCol + 1;
                 context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
-                    if (curCol == endCol && curRow == endRow) {
-                        alert("you won!");
-                    }
+                if (curCol == endCol && curRow == endRow) {
+                    alert("you won!");
             }
             break;
         case 40:
@@ -83,13 +82,16 @@
                 context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
                 curRow = curRow + 1;
                 context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
-                    if (curCol == endCol && curRow == endRow) {
-                        alert("you won!");
-                    }
+                if (curCol == endCol && curRow == endRow) {
+                    alert("you won!");
             }
             break;
         }
-        
+
+        }
+
+
     };
+
 
 })(jQuery);
