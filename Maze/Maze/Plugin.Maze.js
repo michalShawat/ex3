@@ -1,6 +1,7 @@
 ﻿(function ($) {
     var rows, cols;
     var curCol, curRow;
+    var startCol, startRow;
     var endCol, endRow;
     var mazeCanvas, context;
     var cellWidth, cellHeight;
@@ -8,13 +9,15 @@
 
     $.fn.drawMaze = function(mazeData, // the matrix containing the maze cells
         myRows, myCols,
-        startRow, startCol, // initial position of the player
+        myStartRow, myStartCol, // initial position of the player
         exitRow, exitCol, // the exit position
         playerImage, // player's icon (of type Image)
         exitImage // exit's icon (of type Image)
         ///isEnabled // is the board enabled (i.e., player can move)
         //,function (direction, playerRow, playerCol)
     ) {
+        startRow = myStartRow;
+        startCol = myStartCol;
         cols = myCols;
         rows = myRows;
         endCol = exitCol;
@@ -93,6 +96,10 @@
 
     $.fn.solveMaze = function(data) {
         var length = data.length;
+        context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
+        curCol = startCol;
+        curRow = startRow;
+        context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
         (function myfunc(i) {
             switch ((data[i])) {
                 case "0":
@@ -121,9 +128,8 @@
                 }
             default:{}
             }
-            if (i < length) setTimeout(function () { myfunc(++i); }, 1000);
-        }(0));
-        myfunc(0);
+            if (i > 0) setTimeout(function () { myfunc(--i); }, 500);
+        }(length));
    
 };
 })(jQuery);
