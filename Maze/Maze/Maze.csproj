@@ -123,6 +123,7 @@
     <Content Include="ModelFromEx1\SearchAlgorithmsLib.dll" />
     <Content Include="SinglePlayerMenuPage.css" />
     <Content Include="SinglePlayerMenuPage.html" />
+    <Content Include="SolveMaze.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
