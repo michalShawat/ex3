@@ -1,15 +1,10 @@
 ﻿$(document).ready(function() {
     $("#startLink").click(function (event) {
-
-
           $('#myLoader').show();
-        
-
-
         var name = $("#mazeName").val();
         var rows = $("#mazeRows").val();
         var cols = $("#mazeCols").val();
-        $.getJSON("api/generate/" + name + "/" + rows + "/" + cols,
+        $.getJSON("api/Generate/" + name + "/" + rows + "/" + cols,
             function(data) {
                 //var mazemaze = $("#mazeCanvas").drawMaze(data);
                 var mazeData = data.Maze; // the matrix containing the maze cells
@@ -39,8 +34,20 @@
                 document.title = name;
             });
     });
-    
+
+    $("#solveLink").click(function (event) {
+        var name = $("#mazeName").val();
+        var algorithmType = document.getElementById("algoSelect").selectedIndex;
+        alert(algorithmType);
+        $.getJSON("api/Generate/" + name + "/" + algorithmType,
+            function (data) {
+                alert(data);
+                $("#mazeCanvas").solveMaze(data);
+            });
+    });
+
     document.onkeydown = function (e) {
         $("#mazeCanvas").move(e);
     }
+    
 });
