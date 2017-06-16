@@ -23,12 +23,7 @@ namespace Maze.Controllers
             this.myModel = new Model();
         }
 
-        // GET: api/Single
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-        
+
         // GET: /generate/mazeName/0
         public JObject GetSolve(string name, int algorithmType)
         {
@@ -47,6 +42,7 @@ namespace Maze.Controllers
         }
 
         // GET: api/generate/mazeName/4/5
+        
         public JObject GetMaze(string name, int rows, int cols)
         {
             Maze maze = this.myModel.GenerateMaze(name, rows, cols);
@@ -54,7 +50,12 @@ namespace Maze.Controllers
             return obj;
         }
 
-        
+
+        //// GET: api/Single
+        //public IEnumerable<string> Get()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
 
         // POST: api/Single
         public void Post([FromBody]string value)

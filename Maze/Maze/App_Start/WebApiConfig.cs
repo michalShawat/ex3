@@ -25,7 +25,13 @@ namespace Maze
             config.Routes.MapHttpRoute(
                 name: "Generate",
                 routeTemplate: "api/{controller}/{name}/{rows}/{cols}",
-                defaults: new { cols = RouteParameter.Optional }
+                defaults: new { id = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "solve",
+                routeTemplate: "api/{controller}/{name}/{algorithmType}",
+                defaults: new { id = RouteParameter.Optional }
             );
         }
     }

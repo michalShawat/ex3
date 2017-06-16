@@ -41,7 +41,6 @@
         alert(algorithmType);
         $.getJSON("api/Generate/" + name + "/" + algorithmType,
             function (data) {
-                alert(data);
                 $("#mazeCanvas").solveMaze(data);
             });
     });
