@@ -90,4 +90,8 @@
             break;
         }
     };
+
+    $.fn.solveMaze = function (data) {
+        
+    };
 })(jQuery);

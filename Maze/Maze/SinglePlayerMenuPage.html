@@ -16,8 +16,8 @@
     </script>
 </div>
 
-    <img src="login.jpg" style="width:1350px; height:140px;">
-    <h3>Single Player Game</h3>
+<img src="login.jpg" style="width:1350px; height:140px;">
+<h3>Single Player Game</h3>
 <div class="container body-content">
     <div class="col-sm-4 form-horizontal">
         <div class="form-group">
@@ -38,8 +38,6 @@
             <img id="mother" src="mother.jpg" style="display: none" />
         </div>
 
-        <script src="Plugin.Maze.js"></script>
-        <script src="MazeFunctions.js"></script>
 
         <a href="#" class="button" id="startLink">Start New Game</a>
 
@@ -47,17 +45,19 @@
         <div>
             <br/><br/>
             <label for="SearchAlgo" class="col-sm-2 control-label">SearchAlgo</label>
-            <select>
-                <option value="BFS">BFS</option>
+            <select id="algoSelect">
+                <option value="BFS" >BFS</option>
                 <option value="DFS">DFS</option>
             </select>
         </div>
         <br/>
-        <a href="#" class="button">Solve Maze</a>
+        <script src="Plugin.Maze.js"></script>
+        <script src="MazeFunctions.js"></script>
+        <a href="#" class="button" id="solveLink">Solve Maze</a>
 
     </div>
     <canvas id="mazeCanvas" width="500" height="500" style="border: 2px black solid">
-        </canvas>
+    </canvas>
     
     <div id="myLoader" class="loader" style="display: none"></div>
 </div>

@@ -1,16 +1,11 @@
-﻿$(document).ready(function () {
+﻿$(document).ready(function() {
     $("#startLink").click(function (event) {
-
-
-        $('#myLoader').show();
-
-
-
+          $('#myLoader').show();
         var name = $("#mazeName").val();
         var rows = $("#mazeRows").val();
         var cols = $("#mazeCols").val();
-        $.getJSON("api/generate/" + name + "/" + rows + "/" + cols,
-            function (data) {
+        $.getJSON("api/Generate/" + name + "/" + rows + "/" + cols,
+            function(data) {
                 //var mazemaze = $("#mazeCanvas").drawMaze(data);
                 var mazeData = data.Maze; // the matrix containing the maze cells
                 var startRow = data.Start.Row;
@@ -31,7 +26,7 @@
                     exitImage // exit's icon (of type Image)
                     //true // is the board enabled (i.e., player can move)
                     //function(direction, playerRow, playerCol) {
-
+                        
                     //}
                     //    // a callback function which is invoked after each move
                 );
@@ -40,7 +35,18 @@
             });
     });
 
+    $("#solveLink").click(function (event) {
+        var name = $("#mazeName").val();
+        var algorithmType = document.getElementById("algoSelect").selectedIndex;
+        alert(algorithmType);
+        $.getJSON("api/Generate/" + name + "/" + algorithmType,
+            function (data) {
+                $("#mazeCanvas").solveMaze(data);
+            });
+    });
+
     document.onkeydown = function (e) {
         $("#mazeCanvas").move(e);
     }
+    
 });

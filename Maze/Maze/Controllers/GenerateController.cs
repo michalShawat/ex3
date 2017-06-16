@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using SearchAlgorithmsLib;
 
 namespace Maze.Controllers
 {
@@ -22,13 +23,26 @@ namespace Maze.Controllers
             this.myModel = new Model();
         }
 
-        // GET: api/Single
-        public IEnumerable<string> Get()
+
+        // GET: /generate/mazeName/0
+        public JObject GetSolve(string name, int algorithmType)
         {
-            return new string[] { "value1", "value2" };
+            ISearcher<Position> algorithmSearcher;
+            if (algorithmType == 0)
+            {
+                algorithmSearcher = new BFS<Position>();
+            }
+            else
+            {
+                algorithmSearcher = new DFS<Position>();
+            }
+            string solution = this.myModel.SolveMaze(name, algorithmSearcher);
+            JObject obj = JObject.Parse(solution);
+            return obj;
         }
 
-        // GET: api/Single/mazeName/4/5
+        // GET: api/generate/mazeName/4/5
+        
         public JObject GetMaze(string name, int rows, int cols)
         {
             Maze maze = this.myModel.GenerateMaze(name, rows, cols);
@@ -36,12 +50,11 @@ namespace Maze.Controllers
             return obj;
         }
 
-        //// GET: api/Single/mazeName
-        //public JObject GetSolve(string name, int rows, int cols)
+
+        //// GET: api/Single
+        //public IEnumerable<string> Get()
         //{
-        //    Maze maze = this.myModel.GenerateMaze(name, rows, cols);
-        //    JObject obj = JObject.Parse(maze.ToJSON());
-        //    return obj;
+        //    return new string[] { "value1", "value2" };
         //}
 
         // POST: api/Single
