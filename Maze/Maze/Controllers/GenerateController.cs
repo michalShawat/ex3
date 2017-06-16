@@ -28,8 +28,16 @@ namespace Maze.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        // GET: api/Single/5
+        // GET: api/Single/mazeName/4/5
         public JObject GetMaze(string name, int rows, int cols)
+        {
+            Maze maze = this.myModel.GenerateMaze(name, rows, cols);
+            JObject obj = JObject.Parse(maze.ToJSON());
+            return obj;
+        }
+
+        // GET: api/Single/mazeName
+        public JObject GetSolve(string name, int rows, int cols)
         {
             Maze maze = this.myModel.GenerateMaze(name, rows, cols);
             JObject obj = JObject.Parse(maze.ToJSON());
