@@ -6,7 +6,7 @@
     var cellWidth, cellHeight;
     var playerImg, mazeStr;
 
-    $.fn.drawMaze = function(mazeData, // the matrix containing the maze cells
+    $.fn.drawMaze = function (mazeData, // the matrix containing the maze cells
         myRows, myCols,
         startRow, startCol, // initial position of the player
         exitRow, exitCol, // the exit position
@@ -30,68 +30,66 @@
         for (var i = 0; i < rows; i++) {
             for (var j = 0; j < cols; j++) {
                 if (mazeData[i * rows + j] == 1) {
-                    context.fillRect(cellWidth * j, cellHeight * i, cellWidth, cellHeight);
+                    context.fillRect(cellWidth  j, cellHeight  i, cellWidth, cellHeight);
                 }
             }
-            context.drawImage(playerImage, cellWidth * startCol, cellHeight * startRow, cellHeight, cellWidth);
-            context.drawImage(exitImage, cellWidth * exitCol, cellHeight * exitRow, cellHeight, cellWidth);
+            context.drawImage(playerImage, cellWidth  startCol, cellHeight  startRow, cellHeight, cellWidth);
+            context.drawImage(exitImage, cellWidth  exitCol, cellHeight  exitRow, cellHeight, cellWidth);
         };
         return this;
     };
 
     $.fn.move = function (e) {
-
         switch (e.keyCode) {
- 
-        case 37:
-            //left
+            case 37:
+                //left
                 if (mazeStr[(curRow * rows) + curCol - 1] != 1 && (curCol - 1) >= 0) {
-                context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
-                curCol = curCol - 1;
-                context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
-                if (curCol == endCol && curRow == endRow) {
-                    alert("you won!");
-            }
-            break;
-        case 38:
-            //up
+                    context.clearRect(cellWidth  curCol, cellHeight  curRow, cellHeight, cellWidth);
+                    curCol = curCol - 1;
+                    context.drawImage(playerImg, cellWidth  curCol, cellHeight  curRow, cellHeight, cellWidth);
+                    if (curCol == endCol && curRow == endRow) {
+                        alert("you won!");
+                    }
+                }
+                break;
+            case 38:
+                //up
                 if (mazeStr[((curRow - 1) * rows) + curCol] != 1 && (curRow - 1) >= 0) {
 
-                context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
-                curRow = curRow - 1;
-                context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
-                if (curCol == endCol && curRow == endRow) {
-                    alert("you won!");
-            }
-            break;
-        case 39:
-            //right
+                    context.clearRect(cellWidth  curCol, cellHeight  curRow, cellHeight, cellWidth);
+                    curRow = curRow - 1;
+                    context.drawImage(playerImg, cellWidth  curCol, cellHeight  curRow, cellHeight, cellWidth);
+                    if (curCol == endCol && curRow == endRow) {
+                        alert("you won!");
+                    }
+                }
+                break;
+            case 39:
+                //right
                 if (mazeStr[(curRow * rows) + curCol + 1] != 1 && (curCol + 1) < cols) {
 
-                context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
-                curCol = curCol + 1;
-                context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
-                if (curCol == endCol && curRow == endRow) {
-                    alert("you won!");
-            }
-            break;
-        case 40:
-            //down
+                    context.clearRect(cellWidth  curCol, cellHeight  curRow, cellHeight, cellWidth);
+                    curCol = curCol + 1;
+                    context.drawImage(playerImg, cellWidth  curCol, cellHeight  curRow, cellHeight, cellWidth);
+                    if (curCol == endCol && curRow == endRow) {
+                        alert("you won!");
+                    }
+                }
+                break;
+            case 40:
+                //down
                 if (mazeStr[((curRow + 1) * rows) + curCol] != 1 && (curRow + 1) < rows) {
 
-                context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
-                curRow = curRow + 1;
-                context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
-                if (curCol == endCol && curRow == endRow) {
-                    alert("you won!");
-            }
-            break;
+                    context.clearRect(cellWidth  curCol, cellHeight  curRow, cellHeight, cellWidth);
+                    curRow = curRow + 1;
+                    context.drawImage(playerImg, cellWidth  curCol, cellHeight  curRow, cellHeight, cellWidth);
+                    if (curCol == endCol && curRow == endRow) {
+                        alert("you won!");
+                    }
+                }
+                break;
         }
-
-        }
-
 
     };
-
 
 })(jQuery);
