@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title id="myTitle">Single Player</title>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" type="text/css" href="RegisterPage.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div id="myTopnav">
+    <script src="Scripts/jquery-3.1.1.js"></script>
+    <script>
+        $("#myTopnav").load("MenuPlugIn.html");
+    </script>
+</div>
+    <script src="Settings.js"></script>
+    <img src="login.jpg" style="width:1350px; height:140px;">
+    <h3>Settings</h3>
+    <div class="container body-content">
+        <div class="col-sm-4 form-horizontal">
+            <div class="form-group">
+                <label for="mazeRows" class="col-sm-2 control-label">Rows</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="mazeRows"  value="6"/>
+                </div><br />
+                <label for="mazeCols" class="col-sm-2 control-label">Cols</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="mazeCols"  value="6"/>
+                </div><br />
+                </div>
+            <div>
+                <br /><br />
+                <label for="SearchAlgo" class="col-sm-2 control-label">SearchAlgo</label>
+                <select id="algoSelect">
+                    <option value="BFS">BFS</option>
+                    <option value="DFS">DFS</option>
+                </select><br /><br /><br />
+                <a href="#" class="button" id="saveLink">Save Settings</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
