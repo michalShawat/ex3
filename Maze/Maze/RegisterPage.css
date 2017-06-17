@@ -43,10 +43,10 @@ input {
 
 
 a.button {
+    margin-top: 3em;
     margin-left: 9em;
     padding: 10px 18px;
     background: #69bfbe;
-    border: 5;
     font-style: italic;
     font-weight: 900;
     font-size: 15px;
@@ -91,4 +91,31 @@ canvas {
     100% {
         transform: rotate(360deg);
     }
+}
+
+
+canvas#mazeCanvasPlayer2 {
+    margin-left: 58em;
+    margin-top: -31.5em;
+    display: block;
+}
+
+canvas#mazeCanvasPlayer1 {
+    margin-left: 25em;
+    margin-top: -25.5em;
+    display: block;
+}
+
+b1 {
+    margin-left: 20em;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+b2 {
+    margin-left: 22em;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: bolder;
 }

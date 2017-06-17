@@ -3,24 +3,29 @@ body {
     background-color: #086475;
 }
 
-div {
+h3 {
     font-style: italic;
-    font-size: 25px;
-    margin-left: 2em;
-    font-weight: 600
+    font-size: 40px;
+    margin-left: 1em;
+    font-weight: 900
+}
+
+p {
+    font-style: italic;
+    font-size: 40px;
+    margin-left: 1em;
+    font-weight: 600;
 }
 
 form {
     font-style: italic;
-    font-size: 20px;
+    font-size: 28px;
     font-weight: 600;
     margin: 3em;
 }
 
 a {
-    font-style: italic ;
-    font-size: 18px;
+    font-style: italic;
+    font-size: 25px;
     font-weight: 600;
-    margin: 3em;
 }
-
