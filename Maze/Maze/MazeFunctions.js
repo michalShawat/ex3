@@ -42,8 +42,9 @@
         $.getJSON("api/Generate/" + name + "/" + algorithmType,
             function (data) {
                 $("#mazeCanvas").solveMaze(data);
+
             });
-    });
+    }); 
 
     document.onkeydown = function (e) {
         $("#mazeCanvas").move(e);
