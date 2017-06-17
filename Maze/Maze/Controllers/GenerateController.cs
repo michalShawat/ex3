@@ -16,36 +16,30 @@ namespace Maze.Controllers
 
     public class GenerateController : ApiController
     {
-        private IModel myModel;
-
-        public GenerateController()
-        {
-            this.myModel = new Model();
-        }
-
-
+        private static IModel myModel = new Model();
+        
         // GET: /generate/mazeName/0
-        public JObject GetSolve(string name, int algorithmType)
+        public string GetSolve(string name, int algorithmType)
         {
             ISearcher<Position> algorithmSearcher;
             if (algorithmType == 0)
             {
+
                 algorithmSearcher = new BFS<Position>();
             }
             else
             {
                 algorithmSearcher = new DFS<Position>();
             }
-            string solution = this.myModel.SolveMaze(name, algorithmSearcher);
-            JObject obj = JObject.Parse(solution);
-            return obj;
+            string solution = myModel.SolveMaze(name, algorithmSearcher);
+            return solution;
         }
 
         // GET: api/generate/mazeName/4/5
         
         public JObject GetMaze(string name, int rows, int cols)
         {
-            Maze maze = this.myModel.GenerateMaze(name, rows, cols);
+            Maze maze = myModel.GenerateMaze(name, rows, cols);
             JObject obj = JObject.Parse(maze.ToJSON());
             return obj;
         }

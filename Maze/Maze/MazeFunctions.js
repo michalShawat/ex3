@@ -38,7 +38,6 @@
     $("#solveLink").click(function (event) {
         var name = $("#mazeName").val();
         var algorithmType = document.getElementById("algoSelect").selectedIndex;
-        alert(algorithmType);
         $.getJSON("api/Generate/" + name + "/" + algorithmType,
             function (data) {
                 $("#mazeCanvas").solveMaze(data);
@@ -47,7 +46,24 @@
     }); 
 
     document.onkeydown = function (e) {
-        $("#mazeCanvas").move(e);
+        switch (e.keyCode) {
+        case 37:
+            //left
+            $("#mazeCanvas").move("l");
+            break;
+        case 38:
+            //up
+            $("#mazeCanvas").move("u");
+            break;
+        case 39:
+            //right
+            $("#mazeCanvas").move("r");
+            break;
+        case 40:
+            //down
+            $("#mazeCanvas").move("d");
+            break;
+        }
     }
     
 });
