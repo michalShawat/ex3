@@ -6,7 +6,8 @@
     $("#saveLink").click(function (event) {
         if ((localStorage.getItem("rows").localeCompare($("#mazeRows").val()))) {
             localStorage.clear("rows");
-            localStorage.setItem("rows", $("#mazeRows").val());
+            localStorage.setIte
+m("rows", $("#mazeRows").val());
         }
 
         if ((localStorage.getItem("cols").localeCompare($("#mazeRows").val()))) {
