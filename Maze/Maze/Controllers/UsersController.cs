@@ -12,44 +12,44 @@ using Maze.Models;
 
 namespace Maze.Controllers
 {
-    public class MessangersController : ApiController
+    public class UsersController : ApiController
     {
         private MazeContext db = new MazeContext();
 
-        // GET: api/Messangers
-        public IQueryable<Messanger> GetMessangers()
+        // GET: api/Users
+        public IQueryable<User> GetUsers()
         {
-            return db.Messangers;
+            return db.Users.Include(b => b.username);
         }
 
-        // GET: api/Messangers/5
-        [ResponseType(typeof(Messanger))]
-        public IHttpActionResult GetMessanger(string id)
+        // GET: api/Users/5
+        [ResponseType(typeof(User))]
+        public IHttpActionResult GetUser(string id)
         {
-            Messanger messanger = db.Messangers.Find(id);
-            if (messanger == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return NotFound();
             }
 
-            return Ok(messanger);
+            return Ok(user);
         }
 
-        // PUT: api/Messangers/5
+        // PUT: api/Users/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutMessanger(string id, Messanger messanger)
+        public IHttpActionResult PutUser(string id, User user)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != messanger.username)
+            if (id != user.username)
             {
                 return BadRequest();
             }
 
-            db.Entry(messanger).State = EntityState.Modified;
+            db.Entry(user).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +57,7 @@ namespace Maze.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MessangerExists(id))
+                if (!UserExists(id))
                 {
                     return NotFound();
                 }
@@ -70,16 +70,16 @@ namespace Maze.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Messangers
-        [ResponseType(typeof(Messanger))]
-        public IHttpActionResult PostMessanger(Messanger messanger)
+        // POST: api/Users
+        [ResponseType(typeof(User))]
+        public IHttpActionResult PostUser(User user)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Messangers.Add(messanger);
+            db.Users.Add(user);
 
             try
             {
@@ -87,7 +87,7 @@ namespace Maze.Controllers
             }
             catch (DbUpdateException)
             {
-                if (MessangerExists(messanger.username))
+                if (UserExists(user.username))
                 {
                     return Conflict();
                 }
@@ -97,23 +97,23 @@ namespace Maze.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = messanger.username }, messanger);
+            return CreatedAtRoute("DefaultApi", new { id = user.username }, user);
         }
 
-        // DELETE: api/Messangers/5
-        [ResponseType(typeof(Messanger))]
-        public IHttpActionResult DeleteMessanger(string id)
+        // DELETE: api/Users/5
+        [ResponseType(typeof(User))]
+        public IHttpActionResult DeleteUser(string id)
         {
-            Messanger messanger = db.Messangers.Find(id);
-            if (messanger == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return NotFound();
             }
 
-            db.Messangers.Remove(messanger);
+            db.Users.Remove(user);
             db.SaveChanges();
 
-            return Ok(messanger);
+            return Ok(user);
         }
 
         protected override void Dispose(bool disposing)
@@ -125,9 +125,9 @@ namespace Maze.Controllers
             base.Dispose(disposing);
         }
 
-        private bool MessangerExists(string id)
+        private bool UserExists(string id)
         {
-            return db.Messangers.Count(e => e.username == id) > 0;
+            return db.Users.Count(e => e.username == id) > 0;
         }
     }
 }

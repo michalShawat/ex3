@@ -19,6 +19,6 @@ namespace Maze.Models
         {
         }
 
-        public System.Data.Entity.DbSet<Maze.Models.Messanger> Messangers { get; set; }
+        public System.Data.Entity.DbSet<Maze.Models.User> Users { get; set; }
     }
 }

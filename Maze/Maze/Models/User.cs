@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Maze.Models
 {
-    public class Messanger
+    public class User
     {
         [Key]
         public string username { get; set; }
