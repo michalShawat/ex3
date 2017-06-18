@@ -47,6 +47,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\CompareMazeSolvers.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="MazeGeneratorLib">
       <HintPath>..\..\..\..\..\Downloads\מטלה 1-20170330\MazeGeneratorLib.dll</HintPath>
     </Reference>
@@ -136,6 +142,8 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\GenerateController.cs" />
+    <Compile Include="Controllers\MessangersController.cs" />
+    <Compile Include="Controllers\MultiController.cs" />
     <Compile Include="ModelFromEx1\ClientHandler.cs" />
     <Compile Include="ModelFromEx1\Game.cs" />
     <Compile Include="Global.asax.cs">
@@ -145,6 +153,8 @@
     <Compile Include="ModelFromEx1\IController.cs" />
     <Compile Include="ModelFromEx1\IModel.cs" />
     <Compile Include="ModelFromEx1\Model.cs" />
+    <Compile Include="Models\MazeContext.cs" />
+    <Compile Include="Models\Messanger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -162,7 +172,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

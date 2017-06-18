@@ -5,13 +5,14 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using SearchAlgorithmsLib;
+using Maze.ModelFromEx1;
+using MazeLib;
+using Newtonsoft.Json.Linq;
 
 namespace Maze.Controllers
 {
     using Maze.ModelFromEx1;
-
     using MazeLib;
-
     using Newtonsoft.Json.Linq;
 
     public class GenerateController : ApiController
