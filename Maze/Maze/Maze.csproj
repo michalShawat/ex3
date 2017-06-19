@@ -126,11 +126,14 @@
     <Content Include="RegisterPage.css" />
     <Content Include="RegisterPage.html" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="ModelFromEx1\SearchAlgorithmsLib.dll" />
+    <Content Include="Scripts\knockout-3.4.2.debug.js" />
+    <Content Include="Scripts\knockout-3.4.2.js" />
     <Content Include="Settings.html" />
     <Content Include="Settings.js" />
     <Content Include="SinglePlayerMenuPage.css" />
@@ -142,8 +145,12 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\GenerateController.cs" />
-    <Compile Include="Controllers\MessangersController.cs" />
     <Compile Include="Controllers\MultiController.cs" />
+    <Compile Include="Migrations\201706191153300_Initial.cs" />
+    <Compile Include="Migrations\201706191153300_Initial.Designer.cs">
+      <DependentUpon>201706191153300_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelFromEx1\ClientHandler.cs" />
     <Compile Include="ModelFromEx1\Game.cs" />
     <Compile Include="Global.asax.cs">
@@ -154,7 +161,6 @@
     <Compile Include="ModelFromEx1\IModel.cs" />
     <Compile Include="ModelFromEx1\Model.cs" />
     <Compile Include="Models\MazeContext.cs" />
-    <Compile Include="Models\Messanger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +178,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706191153300_Initial.resx">
+      <DependentUpon>201706191153300_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
