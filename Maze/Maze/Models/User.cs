@@ -18,4 +18,4 @@ namespace Maze.Models
         public int losses { get; set; }
 
     }
-}//
+}
