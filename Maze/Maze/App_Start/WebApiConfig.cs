@@ -39,6 +39,12 @@ namespace Maze
             routeTemplate: "api/{controller}/{name}/{rows}/{cols}",
             defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Routes.MapHttpRoute(
+            name: "GetUsers",
+            routeTemplate: "api/{controller}/{name}",
+            defaults: new { controller = "Users" }
+            );
         }
     }
 }
