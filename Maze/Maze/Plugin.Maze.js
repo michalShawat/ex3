@@ -36,9 +36,10 @@
                     context.fillRect(cellWidth * j, cellHeight * i, cellWidth, cellHeight);
                 }
             }
-            context.drawImage(playerImage, cellWidth * startCol, cellHeight * startRow, cellHeight, cellWidth);
-            context.drawImage(exitImage, cellWidth * exitCol, cellHeight * exitRow, cellHeight, cellWidth);
         };
+  
+        context.drawImage(playerImage, cellWidth * startCol, cellHeight * startRow, cellWidth, cellHeight);
+        context.drawImage(exitImage, cellWidth * exitCol, cellHeight * exitRow, cellWidth, cellHeight);
         return this;
     };
 
