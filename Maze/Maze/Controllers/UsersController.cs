@@ -80,7 +80,7 @@ namespace Maze.Controllers
             }
 
             db.Users.Add(user);
-
+            //
             try
             {
                 db.SaveChanges();
