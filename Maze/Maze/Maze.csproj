@@ -150,6 +150,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\GenerateController.cs" />
     <Compile Include="Controllers\MultiController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Migrations\201706181621563_Initial.cs" />
     <Compile Include="Migrations\201706181621563_Initial.Designer.cs">
       <DependentUpon>201706181621563_Initial.cs</DependentUpon>
