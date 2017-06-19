@@ -18,18 +18,22 @@
         <h3>Register</h3>
         <p>Fill out your details.</p>
     </div>
-    <form action="/action_page.php">
+    <form data-bind="submit: addUser">
         Username:<br/>
-        <input type="text" name="Username" value=""><br/><br/>
+        <input type="text" name="Username" value="" data-bind="value:UserName"><br/><br/>
         Password:<br/>
-        <input type="text" name="Password" value=""><br/><br/>
+        <input type="text" name="Password" value="" data-bind="value:Password"><br/><br/>
         Password again:<br/>
-        <input type="text" name="PasswordAgain" value=""><br/><br/>
+        <input type="text" name="PasswordAgain"><br/><br/>
         Email:<br/>
-        <input type="text" name="Email" value=""><br/><br/>
+        <input type="text" name="Email" value="" data-bind="value:Email"><br/><br/>
         <input type="submit" value="Register">
     </form>
 
 </div>
+    <script src="Scripts/jquery-3.1.1.js"></script>
+    <script src="Scripts/knockout-3.4.2.js"></script>
+    <script src="Scripts/app.js"></script>
+
 </body>
 </html>

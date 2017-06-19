@@ -1,34 +1,35 @@
 ﻿var ViewModel = function () {
     var self = this; // make 'this' available to subfunctions or closures
     self.users = ko.observableArray(); // enables data binding
-    var userssUri = "/api/users";
-    function getAllBooks() {
-        $.getJSON(usersUri).done(function (data) {
-            self.users(data);
+    var usersUri = "/api/Users";
+   
+    self.UserName = ko.observable();
+    self.Password = ko.observable();
+    self.Email = ko.observable();
+
+   
+    self.addUser = function () {
+        //self.getUserDetails = function (user) {
+        //    $.getJSON(usersUri + "/" + user.username).done(function (data) {
+        //        self.currUser(data);
+        //    });
+        //}
+
+        var user = {
+            username: self.UserName(),
+            password: self.Password(),
+            email: self.Email(),
+            //Wins: self.newUser.Wins(),
+           // Losses: self.newUser.Losses()
+        };
+        $.post(usersUri, user).done(function (item) {
+            alert("ahoi!");
+           // self.users.push(item);
         });
     }
+    //getUsers();
     // Fetch the initial data
-    getAllUsers();
+   // getAllUsers();
 };
-ko.applyBindings(new ViewModel()); // sets up the data bindingself.currUser = ko.observable();
-self.getUserDetails = function (user) {
-    $.getJSON(usersUri + "/" + user.username).done(function (data) {
-        self.currUser(data);
-    });
-}
+ko.applyBindings(new ViewModel()); // sets up the data binding
 
-
-
-self.addUser = function () {
-    var user = {
-        Username: self.newBook.Username(),
-        Password: self.newBook.Password(),
-        Email: self.newBook.Email(),
-        Wins: self.newBook.Wins(),
-        Losses: self.newBook.Losses()
-    };
-    $.post(usersUri, user).done(function (item) {
-        self.users.push(item);
-    });
-}
-getUsers();

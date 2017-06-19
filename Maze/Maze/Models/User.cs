@@ -13,13 +13,9 @@ namespace Maze.Models
         public string username { get; set; }
         [Required]
         public string password { get; set; }
-        [Required]
         public string email { get; set; }
-        [Required]
         public int wins { get; set; }
-        [Required]
         public int losses { get; set; }
-
 
     }
 }

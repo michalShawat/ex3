@@ -19,7 +19,7 @@ namespace Maze.Controllers
         // GET: api/Users
         public IQueryable<User> GetUsers()
         {
-            return db.Users.Include(b => b.username);
+            return db.Users;
         }
 
         // GET: api/Users/5
@@ -69,7 +69,7 @@ namespace Maze.Controllers
 
             return StatusCode(HttpStatusCode.NoContent);
         }
-
+        //post = put for the first time, put = update
         // POST: api/Users
         [ResponseType(typeof(User))]
         public IHttpActionResult PostUser(User user)
