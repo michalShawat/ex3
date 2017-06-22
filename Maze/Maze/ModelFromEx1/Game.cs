@@ -14,12 +14,12 @@ namespace Maze.ModelFromEx1
         /// <summary>
         /// The first player
         /// </summary>
-        private TcpClient firstPlayer;
+        private string firstPlayer;
 
         /// <summary>
         /// The second player
         /// </summary>
-        private TcpClient secondPlayer;
+        private string secondPlayer;
 
         /// <summary>
         /// The maze
@@ -31,7 +31,7 @@ namespace Maze.ModelFromEx1
         /// </summary>
         /// <param name="maze">The maze.</param>
         /// <param name="firstPlayer">The first player.</param>
-        public Game(Maze maze, TcpClient firstPlayer)
+        public Game(Maze maze, string firstPlayer)
         {
             this.maze = maze;
             this.firstPlayer = firstPlayer;
@@ -43,7 +43,7 @@ namespace Maze.ModelFromEx1
         /// <value>
         /// The second player.
         /// </value>
-        public TcpClient SecondPlayer
+        public string SecondPlayer
         {
             get
             {
@@ -62,7 +62,7 @@ namespace Maze.ModelFromEx1
         /// <value>
         /// The first player.
         /// </value>
-        public TcpClient FirstPlayer
+        public string FirstPlayer
         {
             get
             {

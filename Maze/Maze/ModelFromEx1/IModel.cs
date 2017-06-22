@@ -68,7 +68,7 @@ namespace Maze.ModelFromEx1
         /// <param name="rows">The rows.</param>
         /// <param name="cols">The cols.</param>
         /// <param name="client">The client.</param>
-        void StartMaze(string name, int rows, int cols, TcpClient client);
+        void StartMaze(string name, int rows, int cols, string client);
 
         /// <summary>
         /// return a lists of the mazes.
@@ -82,14 +82,14 @@ namespace Maze.ModelFromEx1
         /// <param name="name">The name of the maze we want to join.</param>
         /// <param name="client">The client.</param>
         /// <returns>the joined maze</returns>
-        Maze JoinMaze(string name, TcpClient client);
+        Maze JoinMaze(string name, string client);
 
         /// <summary>
         /// Play- move one step in the maze .
         /// </summary>
         /// <param name="move">The move.</param>
         /// <param name="client">The client.</param>
-        void PlayMaze(string move, TcpClient client);
+        void PlayMaze(string move, string client);
 
         /// <summary>
         /// Closes the maze.
@@ -97,6 +97,6 @@ namespace Maze.ModelFromEx1
         /// <param name="name">The name of the maze we 
         /// want to close .</param>
         /// <param name="client">The client.</param>
-        void CloseMaze(string name, TcpClient client);
+        void CloseMaze(string name, string client);
     }
 }
