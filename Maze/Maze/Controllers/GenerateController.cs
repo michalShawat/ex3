@@ -5,20 +5,19 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using SearchAlgorithmsLib;
-using Maze.ModelFromEx1;
-using MazeLib;
-using Newtonsoft.Json.Linq;
 
 namespace Maze.Controllers
 {
     using Maze.ModelFromEx1;
+
     using MazeLib;
+
     using Newtonsoft.Json.Linq;
 
     public class GenerateController : ApiController
     {
         private static IModel myModel = new Model();
-        
+
         // GET: /generate/mazeName/0
         public string GetSolve(string name, int algorithmType)
         {
@@ -37,7 +36,7 @@ namespace Maze.Controllers
         }
 
         // GET: api/generate/mazeName/4/5
-        
+
         public JObject GetMaze(string name, int rows, int cols)
         {
             Maze maze = myModel.GenerateMaze(name, rows, cols);
