@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <link rel="stylesheet" type="text/css" href="LoginPage.css">
@@ -8,7 +9,7 @@
 </head>
 <body>
 
-<img src="login.jpg" style="width:1350px; height:180px;">
+<!--<img src="login.jpg" style="width:1350px; height:180px;">-->
 <div id="myTopnav">
     <script src="Scripts/jquery-3.1.1.js"></script>
     <script>
@@ -19,19 +20,41 @@
             <h3>Log in</h3>
             <p>Use a local account to log in.</p>
         </div>
-        <form action="/action_page.php">
+
+    <form action="/action_page.php">
+        <div class="imgcontainer">
+            <img src="loginPic.png" alt="Marco" class="Marco">
+        </div>
+
+        <div class="container">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit">Login</button>
+            <input type="checkbox" checked="checked"> Remember me
+        </div> 
+            <a href="url">Register as a new user</a>
+    </form>
+
+
+        <!--<form action="/action_page.php">
             Username :<br />
             <input type="text" name="Username" value=""><br />
             Password:<br />
             <input type="text" name="Password" value=""><br /><br />
             <input type="submit" value="Login">
-        </form>
-        <a href="url">Register as a new user</a>
-    
-
-
+        </form>-->
+        <!--<a href="url">Register as a new user</a>-->
 </body>
 </html>
 
 
 <div class="topnav"></div>
+
+
+
+
+
