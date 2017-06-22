@@ -156,17 +156,11 @@
     <Compile Include="Migrations\201706191153300_Initial.Designer.cs">
       <DependentUpon>201706191153300_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706191709419_Initial1.cs" />
-    <Compile Include="Migrations\201706191709419_Initial1.Designer.cs">
-      <DependentUpon>201706191709419_Initial1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="ModelFromEx1\ClientHandler.cs" />
     <Compile Include="ModelFromEx1\Game.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ModelFromEx1\IClientHandler.cs" />
     <Compile Include="ModelFromEx1\IController.cs" />
     <Compile Include="ModelFromEx1\IModel.cs" />
     <Compile Include="ModelFromEx1\Model.cs" />
@@ -191,9 +185,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706191153300_Initial.resx">
       <DependentUpon>201706191153300_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706191709419_Initial1.resx">
-      <DependentUpon>201706191709419_Initial1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

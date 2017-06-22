@@ -15,14 +15,7 @@ namespace Maze.ModelFromEx1
         /// The model.
         /// </value>
         IModel Model { get; set; }
-
-        /// <summary>
-        /// Gets or sets the ClientHandler.
-        /// </summary>
-        /// <value>
-        /// The ClientHandler.
-        /// </value>
-        IClientHandler Ch { get; set; }
+        
 
         /// <summary>
         /// Sets the dictionary.
@@ -35,6 +28,6 @@ namespace Maze.ModelFromEx1
         /// <param name="commandLine">The command line.</param>
         /// <param name="client">The client.</param>
         /// <returns>the string returning from the command</returns>
-        string ExecuteCommand(string commandLine, TcpClient client);
+        string ExecuteCommand(string commandLine, string client);
     }
 }

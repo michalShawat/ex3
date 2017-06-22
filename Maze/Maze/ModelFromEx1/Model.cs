@@ -46,7 +46,7 @@ namespace Maze.ModelFromEx1
         /// <summary>
         /// The dictionary of the players' names to the name of the game they are playing.
         /// </summary>
-        private Dictionary<TcpClient, string> playing = new Dictionary<TcpClient, string>();
+        private Dictionary<string, string> playing = new Dictionary<string, string>();
 
         /// <summary>
         /// The dictionary of the mazes to their solutions
@@ -186,7 +186,7 @@ namespace Maze.ModelFromEx1
         /// <param name="rows">The rows.</param>
         /// <param name="cols">The cols.</param>
         /// <param name="client">The client's connection.</param>
-        public void StartMaze(string name, int rows, int cols, TcpClient client)
+        public void StartMaze(string name, int rows, int cols, string client)
         {
             // create maze
             DFSMazeGenerator myMazeGen = new DFSMazeGenerator();
@@ -214,7 +214,7 @@ namespace Maze.ModelFromEx1
         /// <param name="name">The name.</param>
         /// <param name="client">The client.</param>
         /// <returns>the game's maze</returns>
-        public Maze JoinMaze(string name, TcpClient client)
+        public Maze JoinMaze(string name, string client)
         {
             Game game = this.games[name];
             game.SecondPlayer = client;
@@ -224,10 +224,7 @@ namespace Maze.ModelFromEx1
             this.Games.Remove(name);
 
             // print to the first player
-            NetworkStream stream = game.FirstPlayer.GetStream();
-            BinaryWriter writer = new BinaryWriter(stream);
-
-            writer.Write(this.gamesPlaying[name].MyMaze.ToJSON());
+            
             return this.gamesPlaying[name].MyMaze;
         }
 
@@ -236,13 +233,13 @@ namespace Maze.ModelFromEx1
         /// </summary>
         /// <param name="move">The move.</param>
         /// <param name="client">The client.</param>
-        public void PlayMaze(string move, TcpClient client)
+        public void PlayMaze(string move, string client)
         {
             // find the game
             Game game = this.GamesPlaying[this.playing[client]];
 
             // find the second client
-            TcpClient secondClient;
+            string secondClient;
             if (game.SecondPlayer.Equals(client))
             {
                 secondClient = game.FirstPlayer;
@@ -253,13 +250,10 @@ namespace Maze.ModelFromEx1
             }
 
             // print to the second client
-            NetworkStream stream = secondClient.GetStream();
-            BinaryWriter writer = new BinaryWriter(stream);
 
             JObject mazeObj = new JObject();
             mazeObj["Name"] = this.playing[client];
             mazeObj["Direction"] = move;
-            writer.Write(mazeObj.ToString());
         }
 
         /// <summary>
@@ -267,13 +261,13 @@ namespace Maze.ModelFromEx1
         /// </summary>
         /// <param name="name">The name.</param>
         /// <param name="client">The client.</param>
-        public void CloseMaze(string name, TcpClient client)
+        public void CloseMaze(string name, string client)
         {
             // find the game
             Game game = this.GamesPlaying[this.playing[client]];
 
             // find the second client
-            TcpClient secondClient;
+            string secondClient;
             if (game.SecondPlayer.Equals(client))
             {
                 secondClient = game.FirstPlayer;
@@ -289,10 +283,7 @@ namespace Maze.ModelFromEx1
             this.playing.Remove(secondClient);
 
             // print massage to the second client
-            NetworkStream stream = secondClient.GetStream();
-            BinaryWriter writer = new BinaryWriter(stream);
             JObject empty = new JObject();
-            writer.Write(empty.ToString());
         }
     }
 }
