@@ -151,9 +151,9 @@
     <Compile Include="Controllers\GenerateController.cs" />
     <Compile Include="Controllers\MultiController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
-    <Compile Include="Migrations\201706181621563_Initial.cs" />
-    <Compile Include="Migrations\201706181621563_Initial.Designer.cs">
-      <DependentUpon>201706181621563_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201706191153300_Initial.cs" />
+    <Compile Include="Migrations\201706191153300_Initial.Designer.cs">
+      <DependentUpon>201706191153300_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201706191709419_Initial1.cs" />
     <Compile Include="Migrations\201706191709419_Initial1.Designer.cs">
@@ -188,8 +188,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706181621563_Initial.resx">
-      <DependentUpon>201706181621563_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706191153300_Initial.resx">
+      <DependentUpon>201706191153300_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706191709419_Initial1.resx">
       <DependentUpon>201706191709419_Initial1.cs</DependentUpon>
