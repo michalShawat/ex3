@@ -108,6 +108,7 @@
       <DependentUpon>MazeContext-20170618165511.mdf</DependentUpon>
     </Content>
     <Content Include="grass.jpg" />
+    <Content Include="loginPic.png" />
     <Content Include="marco.jpg" />
     <Content Include="MazeFunctions.js" />
     <Content Include="ModelFromEx1\CompareMazeSolvers.dll" />
