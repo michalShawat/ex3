@@ -48,9 +48,9 @@
         case "l":
             //left
                 if (mazeStr[(curRow * rows) + curCol - 1] != 1 && (curCol - 1) >= 0) {
-                context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
+                context.clearRect(cellWidth * curCol, cellHeight * curRow, cellWidth, cellHeight);
                 curCol = curCol - 1;
-                context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
+                context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellWidth, cellHeight);
                     if (curCol == endCol && curRow == endRow) {
                         alert("you won!");
                     }
@@ -60,9 +60,9 @@
             //up
                 if (mazeStr[((curRow - 1) * rows) + curCol] != 1 && (curRow - 1) >= 0) {
 
-                context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
+                    context.clearRect(cellWidth * curCol, cellHeight * curRow, cellWidth, cellHeight);
                 curRow = curRow - 1;
-                context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
+                context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellWidth, cellHeight);
                 if (curCol == endCol && curRow == endRow) {
                         alert("you won!");
                     }
@@ -72,9 +72,9 @@
             //right
                 if (mazeStr[(curRow * rows) + curCol + 1] != 1 && (curCol + 1) < cols) {
 
-                context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
+                    context.clearRect(cellWidth * curCol, cellHeight * curRow, cellWidth, cellHeight);
                 curCol = curCol + 1;
-                context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
+                context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellWidth, cellHeight);
                     if (curCol == endCol && curRow == endRow) {
                         alert("you won!");
                     }
@@ -84,9 +84,9 @@
             //down
                 if (mazeStr[((curRow + 1) * rows) + curCol] != 1 && (curRow + 1) < rows) {
 
-                context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
+                    context.clearRect(cellWidth * curCol, cellHeight * curRow, cellWidth, cellHeight);
                 curRow = curRow + 1;
-                context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
+                context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellWidth, cellHeight);
                     if (curCol == endCol && curRow == endRow) {
                         alert("you won!");
                     }
