@@ -171,7 +171,7 @@
     <Content Include="ModelFromEx1\MazeGeneratorLib.dll" />
     <Content Include="MenuPlugIn.css" />
     <Content Include="mother.jpg" />
-    <Content Include="muliCom.js" />
+    <Content Include="multiCom.js" />
     <Content Include="multi.png" />
     <Content Include="Plugin.Maze.js" />
     <Content Include="MenuPlugIn.html" />
