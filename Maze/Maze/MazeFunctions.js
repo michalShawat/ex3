@@ -72,16 +72,7 @@
         }
     }
 
-    $("#StartMultiLink").click(function(event) {
-        var name = $("#mazeName").val();
-        var rows = $("#mazeRows").val();
-        var cols = $("#mazeCols").val();
-        $.getJSON("api/Solve/" + name + "/" + rows + "/" + cols,
-            function(data) {
-
-
-            });
-    });
+    
 
     $("#JoinLink").click(function (event) {
   
