@@ -7,7 +7,10 @@
     self.Password = ko.observable();
     self.Email = ko.observable();
 
-   
+    
+
+
+
     self.addUser = function () {
         //self.getUserDetails = function (user) {
         //    $.getJSON(usersUri + "/" + user.username).done(function (data) {
