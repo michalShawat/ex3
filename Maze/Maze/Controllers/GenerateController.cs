@@ -44,6 +44,7 @@ namespace Maze.Controllers
             return obj;
         }
 
+        // GET: api/List
         public string GetList()
         {
             return myModel.ListMaze();

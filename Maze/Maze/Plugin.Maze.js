@@ -95,8 +95,13 @@
         }
     };
 
-    $.fn.list = function(data) {
-        alert("hihihi");
+    $.fn.list = function (data) {
+        $.each(items, function (i, item) {
+            $("#ListLink").append($("<option>", {
+                value: item.value,
+                text: item.text
+            }));
+        });
     }
 
     $.fn.solveMaze = function(data) {

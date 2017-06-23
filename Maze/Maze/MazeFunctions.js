@@ -1,9 +1,11 @@
 ﻿$(document).ready(function() {
     $("#startLink").click(function (event) {
-          $('#myLoader').show();
         var name = $("#mazeName").val();
         var rows = $("#mazeRows").val();
         var cols = $("#mazeCols").val();
+
+        if (rows > 0 && cols > 0 && !(name == "")) {
+        $('#myLoader').show();
         $.getJSON("api/Generate/" + name + "/" + rows + "/" + cols,
             function(data) {
                 //var mazemaze = $("#mazeCanvas").drawMaze(data);
@@ -32,7 +34,11 @@
                 );
                 $('#myLoader').hide();
                 document.title = name;
-            });
+                });
+
+        } else {
+            alert("invalid input, try again");
+        }
     });
 
     $("#solveLink").click(function (event) {
@@ -66,16 +72,16 @@
         }
     }
 
-    $("#StartMultiLink").click(function (event) {
+    $("#StartMultiLink").click(function(event) {
         var name = $("#mazeName").val();
         var rows = $("#mazeRows").val();
         var cols = $("#mazeCols").val();
         $.getJSON("api/Solve/" + name + "/" + rows + "/" + cols,
-            function (data) {
-              
-           
+            function(data) {
+
+
             });
-    }); 
+    });
 
     $("#JoinLink").click(function (event) {
   
@@ -88,7 +94,7 @@
 
     $("#ListLink").click(function (event) {
 
-        $.getJSON("api/List",
+        $.getJSON("api/Generate",
             function (data) {
                 $("#ListLink").list(data);
             });
