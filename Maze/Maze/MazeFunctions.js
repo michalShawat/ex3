@@ -84,6 +84,14 @@
             function (data) {
 
             });
-    }); 
+    });
+
+    $("#ListLink").click(function (event) {
+
+        $.getJSON("api/List",
+            function (data) {
+                $("#ListLink").list(data);
+            });
+    });
     
 });

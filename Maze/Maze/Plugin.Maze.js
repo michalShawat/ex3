@@ -95,6 +95,10 @@
         }
     };
 
+    $.fn.list = function(data) {
+        alert("hihihi");
+    }
+
     $.fn.solveMaze = function(data) {
         var length = data.length;
         context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
