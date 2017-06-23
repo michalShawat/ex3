@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" type="text/css" href="RegisterPage.css">
+    <link rel="stylesheet" type="text/css" href="LoginPage.css">
     <meta charset="utf-8" />
     <title></title>
 </head>
@@ -13,21 +13,23 @@
         </script>
     </div>
 <div>
-    <img src="login.jpg" style="width: 1350px; height: 180px;">
     <div>
         <h3>Register</h3>
         <p>Fill out your details.</p>
     </div>
     <form data-bind="submit: addUser">
+        <div class="imgcontainer">
+            <img src="loginPic.png" alt="Marco" class="Marco">
+        </div>
         Username:<br/>
-        <input type="text" name="Username" value="" data-bind="value:UserName"><br/><br/>
+        <input type="text" name="Username" placeholder="Enter Username" value="" data-bind="value:UserName" required><br/><br/>
         Password:<br/>
-        <input type="text" name="Password" value="" data-bind="value:Password"><br/><br/>
+        <input type="password" name="Password" value="" placeholder="Enter Password" data-bind="value:Password" required><br/><br/>
         Password again:<br/>
-        <input type="text" name="PasswordAgain"><br/><br/>
+        <input type="password" name="PasswordAgain" placeholder="Enter Password Again" required><br/><br/>
         Email:<br/>
-        <input type="text" name="Email" value="" data-bind="value:Email"><br/><br/>
-        <input type="submit" value="Register">
+        <input type="text" name="Email" placeholder="Enter Email" value="" data-bind="value:Email" required><br/><br/>
+        <button type="submit" >Register </button>
     </form>
 </div>
     <script src="Scripts/jquery-3.1.1.js"></script>
