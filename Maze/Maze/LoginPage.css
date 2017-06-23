@@ -17,6 +17,7 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
+
 button {
     background-color: #4c7daf;
     color: white;
@@ -45,20 +46,26 @@ img.Marco {
     padding: 16px;
 }
 
-span.psw {
+span.Password {
+    float: right;
+    padding-top: 16px;
+}
+
+span.PasswordAgain {
     float: right;
     padding-top: 16px;
 }
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
-    span.psw {
+    span.Password {
         display: block;
         float: none;
     }
 
-    .cancelbtn {
-        width: 100%;
+    span.PasswordAgain {
+        display: block;
+        float: none;
     }
 }
 
@@ -70,7 +77,14 @@ h3 {
 
 p {
     text-align: center;
+    font-weight: bolder;
     font-size: 20px;
-    font-style: italic 
-    font-weight: 600;
+    font-style: italic
+}
+
+a {
+    font-size: 20px;
+    font-style: italic;
+    margin-left: 1em;
+    font-weight: bolder;
 }
