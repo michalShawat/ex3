@@ -16,6 +16,6 @@ namespace Maze.Models
         public string email { get; set; }
         public int wins { get; set; }
         public int losses { get; set; }
-
+        public object Recipient { get; internal set; }
     }
 }

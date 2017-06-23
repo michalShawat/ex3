@@ -17,9 +17,9 @@ namespace Maze.Controllers
         private MazeContext db = new MazeContext();
 
         // GET: api/Users
-        public IQueryable<User> GetUsers()
+        public IQueryable<User> GetUsers(string name)
         {
-            return db.Users;
+            return db.Users.Where(m => m.username == name);
         }
 
         // GET: api/Users/5
