@@ -4,10 +4,23 @@ using Microsoft.AspNet.SignalR;
 
 namespace Maze.Controllers
 {
+    using Maze.ModelFromEx1;
+
+    using Microsoft.AspNet.SignalR.Hubs;
+
+    using Newtonsoft.Json.Linq;
+    [HubName("gameHub")]
     public class GameHub : Hub
     {
+        private static IModel myModel = new Model();
         private static ConcurrentDictionary<string, string> connectedUsers =
            new ConcurrentDictionary<string, string>();
+
+        public void Start(string name, int rows, int cols)
+        {
+            string clientId = Context.ConnectionId;
+            myModel.StartMaze(name, rows, cols, clientId);
+        }
 
         public void Connect(string name)
         {
