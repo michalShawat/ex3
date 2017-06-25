@@ -176,6 +176,7 @@
     <Content Include="Plugin.Maze.js" />
     <Content Include="MenuPlugIn.html" />
     <Content Include="MultiPlayerMenuPage.html" />
+    <Content Include="userRankings.js" />
     <Content Include="RegisterPage.css" />
     <Content Include="RegisterPage.html" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
