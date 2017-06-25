@@ -195,6 +195,7 @@
     <Content Include="SinglePlayerMenuPage.css" />
     <Content Include="SinglePlayerMenuPage.html" />
     <Content Include="UserRankings.html" />
+    <Content Include="validation.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

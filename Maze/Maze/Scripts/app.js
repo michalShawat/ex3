@@ -7,10 +7,6 @@
     self.Password = ko.observable();
     self.Email = ko.observable();
 
-    
-
-
-
     self.addUser = function () {
         //self.getUserDetails = function (user) {
         //    $.getJSON(usersUri + "/" + user.username).done(function (data) {
@@ -33,6 +29,9 @@
     //getUsers();
     // Fetch the initial data
    // getAllUsers();
+
 };
 ko.applyBindings(new ViewModel()); // sets up the data binding
+
+
 
