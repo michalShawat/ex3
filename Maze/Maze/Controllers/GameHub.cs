@@ -20,6 +20,14 @@ namespace Maze.Controllers
         {
             string clientId = Context.ConnectionId;
             myModel.StartMaze(name, rows, cols, clientId);
+            //connectedUsers.AddOrUpdate()
+        }
+
+        public void List()
+        {
+            string clientId = Context.ConnectionId;
+            string list = myModel.ListMaze();
+            JArray listJArray = JArray.Parse(list);
         }
 
         public void Connect(string name)

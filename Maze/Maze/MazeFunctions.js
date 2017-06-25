@@ -84,12 +84,13 @@
             });
     });
 
-    $("#ListLink").click(function (event) {
-
-        $.getJSON("api/Generate",
-            function (data) {
-                $("#ListLink").list(data);
-            });
-    });
+    //$("#ListLink").click(function (event) {
+    //    // Call the Start method on the hub
+    //    var data = game.server.list();
+    //    for (var i = 0; i < data.length; i++) {
+    //        var a = data[i].text;
+    //        $("#ListLink").append($("<option>", a));
+    //    }
+    //});
     
 });
