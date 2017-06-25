@@ -3,15 +3,19 @@
 <head>
    <link rel="shortcut icon" href="#" />
         <meta charset="utf-8" />
-        <title>User Rankings</title>
+    <title>User Rankings</title>
+    <link href="LoginPage.css" rel="stylesheet" />
 </head>
 <body>
+    <script src="userRankings.js"></script>
 <div id="myTopnav">
-    <script src="Scripts/jquery-3.1.1.js"></script>
+  
     <script>
         $("#myTopnav").load("MenuPlugIn.html");
     </script>
 </div>
+<script src="Scripts/jquery-3.1.1.js"></script>
+   
 <!-- ko if:currUser() -->
 <ul class="list-unstyled" data-bind="foreach: users"></ul>
 <div class="col-sm-4">
@@ -19,15 +23,14 @@
         <div class="panel-heading">
             <h2 class="panel-title">User Rankings</h2>
         </div>
-        <table class="table">
+        <table id="table" class="table">
             <tr>
-                <td>User</td>
-                <td data-bind="text:currUser().User.username"></td>
+                <th>Rank</th>
+                <th>User</th>
+                <th>Wins</th>
+                <th>Losses</th>
+                <th>Player Since</th>
             </tr>
-            <tr><td>Password</td><td data-bind="text: currUser().password"></td></tr>
-            <tr><td>Email</td><td data-bind="text: currUser().email"></td></tr>
-            <tr><td>Wins</td><td data-bind="text: currUser().wins"></td></tr>
-            <tr><td>Losses</td><td data-bind="text: currUser().losses"></td></tr>
         </table>
     </div>
 </div>
@@ -39,7 +42,6 @@
         </div>
     </div>
 </div>
-<script src="userRankings.js"></script>
 <script src="Scripts/jquery-3.1.1.js"></script>
 <script src="Scripts/knockout-3.4.2.js"></script>
 <script src="Scripts/app.js"></script>
