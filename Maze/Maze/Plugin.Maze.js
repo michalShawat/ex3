@@ -23,6 +23,7 @@
         endCol = exitCol;
         endRow = exitRow;
         mazeStr = mazeData;
+    
         playerImg = playerImage;
         curCol = startCol;
         curRow = startRow;
@@ -30,6 +31,7 @@
         context = mazeCanvas.getContext("2d");
         cellWidth = mazeCanvas.width / cols;
         cellHeight = mazeCanvas.height / rows;
+        //var l = mazeStr.length;
         for (var i = 0; i < rows; i++) {
             for (var j = 0; j < cols; j++) {
                 if (mazeData[i * rows + j] == 1) {

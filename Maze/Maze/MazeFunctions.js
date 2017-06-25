@@ -18,6 +18,7 @@
                 var exitImage = document.getElementById("mother");
                 $("#mazeCanvas").drawMaze(
                     mazeData, // the matrix containing the maze cells
+
                     rows,
                     cols,
                     startRow,
