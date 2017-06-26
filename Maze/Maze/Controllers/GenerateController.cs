@@ -45,10 +45,10 @@ namespace Maze.Controllers
         }
 
         // GET: api/List
-        public string GetList()
-        {
-            return myModel.ListMaze();
-        }
+        //public string GetList()
+        //{
+        //    return myModel.ListMaze();
+        //}
 
 
         //// GET: api/Single
