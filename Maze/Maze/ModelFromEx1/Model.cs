@@ -12,6 +12,8 @@ using SearchAlgorithmsLib;
 
 namespace Maze.ModelFromEx1
 {
+    using System;
+
     using Maze = MazeLib.Maze;
 
     /// <summary>
@@ -202,10 +204,10 @@ namespace Maze.ModelFromEx1
         /// Lists the games waiting for second player.
         /// </summary>
         /// <returns>the list in JSON format</returns>
-        public string ListMaze()
+        public List<string> ListMaze()
         {
-            JArray jsonList = new JArray(games.Keys);
-            return jsonList.ToString();
+            List<string> list = new List<string>(games.Keys);
+            return list;
         }
 
         /// <summary>

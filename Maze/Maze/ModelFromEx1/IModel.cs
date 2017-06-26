@@ -74,7 +74,7 @@ namespace Maze.ModelFromEx1
         /// return a lists of the mazes.
         /// </summary>
         /// <returns>the list of the games</returns>
-        string ListMaze();
+        List<string> ListMaze();
 
         /// <summary>
         /// Joins the maze.

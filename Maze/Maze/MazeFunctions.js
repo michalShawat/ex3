@@ -78,7 +78,7 @@
     $("#JoinLink").click(function (event) {
   
         var name = $("#mazeName").val();
-        $.getJSON("api/Join/" + name ,
+        $.getJSON("api/Generate/" + name ,
             function (data) {
 
             });
@@ -86,11 +86,14 @@
 
     //$("#ListLink").click(function (event) {
     //    // Call the Start method on the hub
-    //    var data = game.server.list();
-    //    for (var i = 0; i < data.length; i++) {
-    //        var a = data[i].text;
-    //        $("#ListLink").append($("<option>", a));
-    //    }
+    //    $.getJSON("api/Generate/" + name,
+    //        function (data) {
+    //            for (var i = 0; i < data.length; i++) {
+    //                var a = data[i].text;
+    //                $("#ListLink").append($("<option>", a));
+    //            }
+
+    //        });
     //});
     
 });

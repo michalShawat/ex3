@@ -4,6 +4,8 @@ using Microsoft.AspNet.SignalR;
 
 namespace Maze.Controllers
 {
+    using System.Collections.Generic;
+
     using Maze.ModelFromEx1;
 
     using Microsoft.AspNet.SignalR.Hubs;
@@ -25,9 +27,7 @@ namespace Maze.Controllers
 
         public void List()
         {
-            string clientId = Context.ConnectionId;
-            string list = myModel.ListMaze();
-            JArray listJArray = JArray.Parse(list);
+            Clients.Client(Context.ConnectionId).parseList(myModel.ListMaze());
         }
 
         public void Connect(string name)
