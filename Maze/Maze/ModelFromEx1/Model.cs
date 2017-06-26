@@ -224,9 +224,6 @@ namespace Maze.ModelFromEx1
             this.playing.Add(client, name);
             this.playing.Add(game.FirstPlayer, name);
             this.Games.Remove(name);
-
-            // print to the first player
-            
             return this.gamesPlaying[name].MyMaze;
         }
 
