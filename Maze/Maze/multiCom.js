@@ -10,8 +10,8 @@
     $.fn.startConnection = function(mazeName, mazeRows, mazeCols) {
 // Declare a proxy to reference the hub
         var game = $.connection.GameHub;
-// Create a function that the hub can call to broadcast messages
-        game. = function(name, message) {
+        // Create a function that the hub can call to broadcast messages
+        game.client.start = function (name, message) {
             // Add the message to the page
             alert("hihihihihi");
         };
