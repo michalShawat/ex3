@@ -50,13 +50,13 @@ namespace Maze.Controllers
             gamesToUsers.Remove(name);
 
             // draw for first player
-          string m =  maze.ToJSON();
-            
+             string m =  maze.ToJSON();
+            JObect mazeArr = JObect.Parse(m);
             //string x = "test";
             //string mazeData = maze.Maze;
 
 
-            Clients.Client(Context.ConnectionId).drawTheMaze(m);
+            Clients.Client(clientId).drawTheMaze(maze);
             Clients.Client(clientId).drawTheOtherMaze(maze);
 
             // draw for second player

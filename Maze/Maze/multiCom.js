@@ -9,9 +9,10 @@
     }
 
     game.client.drawTheMaze = function (data) {
-        var mazeData = data.Maze;
-        var rows = data.Rows;
-        var cols = data.Cols;
+       
+        var mazeData = data[Maze];
+        var rows = data[Rows];
+        var cols = data[Cols];
         var startRow = data.InitialPos.Row;
         var startCol = data.InitialPos.Col;
         var exitRow = data.GoalPos.Row;
@@ -31,7 +32,7 @@
     }
 
     game.client.drawTheOtherMaze = function (data) {
-       /* var mazeData = data.Maze;
+        var mazeData = data.Maze;
         var rows = data.Rows;
         var cols = data.Cols;
         var startRow = data.InitialPos.Row;
