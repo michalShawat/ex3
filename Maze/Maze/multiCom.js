@@ -12,10 +12,10 @@
         var mazeData = data.Maze;
         var rows = data.Rows;
         var cols = data.Cols;
-        var startRow = data.InitialPos.Row;
-        var startCol = data.InitialPos.Col;
-        var exitRow = data.GoalPos.Row;
-        var exitCol = data.GoalPos.Col; // the exit position
+        var startRow = data.Start.Row;
+        var startCol = data.Start.Col;
+        var exitRow = data.End.Row;
+        var exitCol = data.End.Col; // the exit position
         var playerImage = document.getElementById("marco"); // player's icon (of type Image)
         var exitImage = document.getElementById("mother");
         $("#mazeCanvasPlayer1").drawMaze(
@@ -28,6 +28,8 @@
             exitCol, // the exit position
             playerImage, // player's icon (of type Image)
             exitImage); // exit's icon (of type Image)
+        $('#myLoader').hide();
+        document.title = name;
     }
 
     game.client.drawTheOtherMaze = function (data) {

@@ -11,6 +11,8 @@ namespace Maze.Controllers
 {
     using MazeLib;
 
+    using Newtonsoft.Json.Linq;
+
     [HubName("gameHub")]
     public class GameHub : Hub
     {
@@ -50,18 +52,13 @@ namespace Maze.Controllers
             gamesToUsers.Remove(name);
 
             // draw for first player
-          string m =  maze.ToJSON();
-            
-            //string x = "test";
-            //string mazeData = maze.Maze;
-
-
-            Clients.Client(Context.ConnectionId).drawTheMaze(m);
-            Clients.Client(clientId).drawTheOtherMaze(maze);
+            JObject m = JObject.Parse(maze.ToJSON());
+            Clients.Client(clientId).drawTheMaze(m);
+            Clients.Client(clientId).drawTheOtherMaze(m);
 
             // draw for second player
-            Clients.Client(secondClientId).drawTheMaze(maze);
-            Clients.Client(secondClientId).drawTheOtherMaze(maze);
+            Clients.Client(secondClientId).drawTheMaze(m);
+            Clients.Client(secondClientId).drawTheOtherMaze(m);
         }
 
         public void Connect(string name)
