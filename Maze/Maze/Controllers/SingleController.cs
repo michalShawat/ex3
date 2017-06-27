@@ -14,11 +14,11 @@ namespace Maze.Controllers
 
     using Newtonsoft.Json.Linq;
 
-    public class GenerateController : ApiController
+    public class SingleController : ApiController
     {
         private static IModel myModel = new Model();
 
-        // GET: /generate/mazeName/0
+        // GET: /single/mazeName/0
         public string GetSolve(string name, int algorithmType)
         {
             ISearcher<Position> algorithmSearcher;
@@ -35,7 +35,7 @@ namespace Maze.Controllers
             return solution;
         }
 
-        // GET: api/generate/mazeName/4/5
+        // GET: api/single/mazeName/4/5
 
         public JObject GetMaze(string name, int rows, int cols)
         {

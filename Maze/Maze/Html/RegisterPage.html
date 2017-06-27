@@ -1,14 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" type="text/css" href="LoginPage.css">
+    <link rel="stylesheet" type="text/css" href="../Styles/LoginPage.css">
     <meta charset="utf-8" />
    
 
 </head>
 <body>
     <div id="myTopnav">
-        <script src="Scripts/jquery-3.1.1.js"></script>
+        <script src="../Scripts/jquery-3.1.1.js"></script>
         <script>
         $("#myTopnav").load("MenuPlugIn.html");
         </script>
@@ -20,7 +20,7 @@
     </div>
     <form data-bind="submit: addUser" id="myForm">
         <div class="imgcontainer">
-            <img src="loginPic.png" alt="Marco" class="Marco">
+            <img src="../Images/loginPic.png" alt="Marco" class="Marco">
         </div>
         Username:<br/>
         <input type="text" name="Username" placeholder="Enter Username" value="" data-bind="value:UserName" required><br/><br/>
@@ -37,15 +37,15 @@
 
     </form>
 </div>
-    <script src="Scripts/jquery-3.1.1.js"></script>
-    <script src="Scripts/knockout-3.4.2.js"></script>
-    <script src="Scripts/app.js"></script>
+    <script src="../Scripts/jquery-3.1.1.js"></script>
+    <script src="../Scripts/knockout-3.4.2.js"></script>
+    <script src="../Scripts/app.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-    <script src="validation.js"></script>
+    <script src="../JavaScripts/validation.js"></script>
 <script>
     $("#myForm").validate({
         rules: {

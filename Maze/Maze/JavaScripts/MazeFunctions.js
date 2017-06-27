@@ -6,7 +6,7 @@
 
         if (rows > 0 && cols > 0 && !(name == "")) {
         $('#myLoader').show();
-        $.getJSON("api/Generate/" + name + "/" + rows + "/" + cols,
+        $.getJSON("api/Single/" + name + "/" + rows + "/" + cols,
             function(data) {
                 //var mazemaze = $("#mazeCanvas").drawMaze(data);
                 var mazeData = data.Maze; // the matrix containing the maze cells
@@ -45,7 +45,7 @@
     $("#solveLink").click(function (event) {
         var name = $("#mazeName").val();
         var algorithmType = document.getElementById("algoSelect").selectedIndex;
-        $.getJSON("api/Generate/" + name + "/" + algorithmType,
+        $.getJSON("api/Single/" + name + "/" + algorithmType,
             function (data) {
                 $("#mazeCanvas").solveMaze(data);
 
@@ -78,7 +78,7 @@
     $("#JoinLink").click(function (event) {
   
         var name = $("#mazeName").val();
-        $.getJSON("api/Generate/" + name ,
+        $.getJSON("api/Single/" + name ,
             function (data) {
 
             });

@@ -205,7 +205,7 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\GameHub.cs" />
-    <Compile Include="Controllers\GenerateController.cs" />
+    <Compile Include="Controllers\SingleController.cs" />
     <Compile Include="Controllers\JObect.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Migrations\201706181621563_Initial.cs" />
