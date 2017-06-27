@@ -1,18 +1,16 @@
 ﻿using System.Collections.Concurrent;
-using System.Linq;
+
 using Microsoft.AspNet.SignalR;
+using System.Collections.Generic;
+
+using Maze.ModelFromEx1;
+
+using Microsoft.AspNet.SignalR.Hubs;
 
 namespace Maze.Controllers
 {
-    using System.Collections.Generic;
-
-    using Maze.ModelFromEx1;
-
     using MazeLib;
 
-    using Microsoft.AspNet.SignalR.Hubs;
-
-    using Newtonsoft.Json.Linq;
     [HubName("gameHub")]
     public class GameHub : Hub
     {
@@ -52,8 +50,13 @@ namespace Maze.Controllers
             gamesToUsers.Remove(name);
 
             // draw for first player
+          string m =  maze.ToJSON();
+            
+            //string x = "test";
             //string mazeData = maze.Maze;
-            Clients.Client(Context.ConnectionId).drawTheMaze(maze);
+
+
+            Clients.Client(Context.ConnectionId).drawTheMaze(m);
             Clients.Client(clientId).drawTheOtherMaze(maze);
 
             // draw for second player
