@@ -10,33 +10,34 @@
 <body>
 
 <!--<img src="login.jpg" style="width:1350px; height:180px;">-->
-<div id="myTopnav">
-    <script>
-        $("#myTopnav").load("MenuPlugIn.html");
-    </script>
-</div>
+    <div id="myTopnav">
+        <script src="../Scripts/jquery-3.1.1.js"></script>
+        <script>
+            $("#myTopnav").load("MenuPlugIn.html");
+        </script>
+        </div>
         <div>
             <h3>Log in</h3>
             <p>Use a local account to log in.</p>
         </div>
 
-    <form action="/action_page.php">
-        <div class="imgcontainer">
-            <img src="../Images/loginPic.png" alt="Marco" class="Marco">
-        </div>
+        <form action="/action_page.php">
+            <div class="imgcontainer">
+                <img src="../Images/loginPic.png" alt="Marco" class="Marco">
+            </div>
 
-        <div class="container">
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <div class="container">
+                <label><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
 
-            <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="Password" required>
+                <label><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="Password" required>
 
-            <button type="submit">Login</button>
-            <input type="checkbox" checked="checked"> Remember me
-        </div> 
+                <button type="submit">Login</button>
+                <input type="checkbox" checked="checked"> Remember me
+            </div>
             <a href="RegisterPage.html">Register as a new user</a>
-    </form>
+        </form>
 
 
         <!--<form action="/action_page.php">
@@ -48,7 +49,6 @@
         </form>-->
         <!--<a href="url">Register as a new user</a>-->
 
-    <script src="Scripts/jquery-3.1.1.js"></script>
 </body>
 </html>
 

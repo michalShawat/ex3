@@ -75,10 +75,11 @@
         });
 
         $("#JoinLink").click(function (event) {
+            $('#myLoader').show();
             var index = document.getElementById("ListLink").selectedIndex;
             var option = document.getElementById("ListLink").options;
             game.server.join(option[index].text);
-            
+            $('#myLoader').hide();
         });
 
 
