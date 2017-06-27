@@ -55,6 +55,10 @@
             exitImage); // exit's icon (of type Image)
     }
 
+    game.client.moveOther = function (data) {
+        // exit's icon (of type Image)
+    }
+
     // Start the connection
     $.connection.hub.start().done(function() {
         $("#StartMultiLink").click(function() {

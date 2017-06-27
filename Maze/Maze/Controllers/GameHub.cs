@@ -7,6 +7,7 @@ using Maze.ModelFromEx1;
 
 using Microsoft.AspNet.SignalR.Hubs;
 
+
 namespace Maze.Controllers
 {
     using MazeLib;
@@ -49,7 +50,7 @@ namespace Maze.Controllers
             // add to playing dictionary?
 
             // remove the old game
-            gamesToUsers.Remove(name);
+            gamesWaiting.Remove(name);
 
             // draw for first player
             JObject m = JObject.Parse(maze.ToJSON());
@@ -59,6 +60,12 @@ namespace Maze.Controllers
             // draw for second player
             Clients.Client(secondClientId).drawTheMaze(m);
             Clients.Client(secondClientId).drawTheOtherMaze(m);
+
+            // add to new dictionary
+            List<string> players = new List<string>();
+            players.Add(clientId);
+            players.Add(secondClientId);
+            gamesToUsers.Add(name,players);
         }
 
         public void Connect(string name)
@@ -66,12 +73,12 @@ namespace Maze.Controllers
             connectedUsers[name] = Context.ConnectionId;
         }
 
-        public void SendMessage(string senderName, string recipientName, string text)
-        {
-            string recipientId = connectedUsers[recipientName];
-            if (recipientId == null)
-                return;
-            Clients.Client(recipientId).gotMessage(senderName, text);
-        }
+        //public void SendMessage(string senderName, string recipientName, string text)
+        //{
+        //    string recipientId = connectedUsers[recipientName];
+        //    if (recipientId == null)
+        //        return;
+        //    Clients.Client(recipientId).gotMessage(senderName, text);
+        //}
     }
 }
