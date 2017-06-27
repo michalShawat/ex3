@@ -33,15 +33,15 @@
     }
 
     game.client.drawTheOtherMaze = function (data) {
-       /* var mazeData = data.Maze;
+        var mazeData = data.Maze;
         var rows = data.Rows;
         var cols = data.Cols;
-        var startRow = data.InitialPos.Row;
-        var startCol = data.InitialPos.Col;
-        var exitRow = data.GoalPos.Row;
-        var exitCol = data.GoalPos.Col; // the exit position
+        var startRow = data.Start.Row;
+        var startCol = data.Start.Col;
+        var exitRow = data.End.Row;
+        var exitCol = data.End.Col; // the exit position
         var playerImage = document.getElementById("marco"); // player's icon (of type Image)
-        var exitImage = document.getElementById("mother");*/
+        var exitImage = document.getElementById("mother");
 
         $("#mazeCanvasPlayer2").drawMaze(
             mazeData, // the matrix containing the maze cells
