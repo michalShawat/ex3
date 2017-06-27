@@ -6,6 +6,8 @@
     self.UserName = ko.observable();
     self.Password = ko.observable();
     self.Email = ko.observable();
+    self.Date = ko.observable();
+   
 
     self.addUser = function () {
         //self.getUserDetails = function (user) {
@@ -16,8 +18,9 @@
 
         var user = {
             username: self.UserName(),
-            password: self.Password(),
+            password:hash(self.Password()),
             email: self.Email(),
+            date: self.Date(),
             //Wins: self.newUser.Wins(),
            // Losses: self.newUser.Losses()
         };
