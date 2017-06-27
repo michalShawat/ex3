@@ -155,30 +155,30 @@
     <Content Include="App_Data\MazeContext-20170618165511_log.ldf">
       <DependentUpon>MazeContext-20170618165511.mdf</DependentUpon>
     </Content>
-    <Content Include="grass.jpg" />
-    <Content Include="loginPic.png" />
-    <Content Include="marco.jpg" />
-    <Content Include="MazeFunctions.js" />
+    <Content Include="Images\grass.jpg" />
+    <Content Include="Images\loginPic.png" />
+    <Content Include="Images\marco.jpg" />
+    <Content Include="JavaScripts\MazeFunctions.js" />
     <Content Include="ModelFromEx1\CompareMazeSolvers.dll" />
     <Content Include="Global.asax" />
-    <Content Include="home.png" />
-    <Content Include="HomePage.css" />
-    <Content Include="HomePage.html" />
-    <Content Include="login.jpg" />
-    <Content Include="LoginPage.css" />
-    <Content Include="LoginPage.html" />
+    <Content Include="Images\home.png" />
+    <Content Include="Styles\HomePage.css" />
+    <Content Include="Html\HomePage.html" />
+    <Content Include="Images\login.jpg" />
+    <Content Include="Styles\LoginPage.css" />
+    <Content Include="Html\LoginPage.html" />
     <Content Include="ModelFromEx1\Maze.dll" />
     <Content Include="ModelFromEx1\MazeGeneratorLib.dll" />
-    <Content Include="MenuPlugIn.css" />
-    <Content Include="mother.jpg" />
-    <Content Include="multiCom.js" />
-    <Content Include="multi.png" />
-    <Content Include="Plugin.Maze.js" />
-    <Content Include="MenuPlugIn.html" />
-    <Content Include="MultiPlayerMenuPage.html" />
-    <Content Include="userRankings.js" />
-    <Content Include="RegisterPage.css" />
-    <Content Include="RegisterPage.html" />
+    <Content Include="Styles\MenuPlugIn.css" />
+    <Content Include="Images\mother.jpg" />
+    <Content Include="JavaScripts\multiCom.js" />
+    <Content Include="Images\multi.png" />
+    <Content Include="JavaScripts\Plugin.Maze.js" />
+    <Content Include="Html\MenuPlugIn.html" />
+    <Content Include="Html\MultiPlayerMenuPage.html" />
+    <Content Include="JavaScripts\userRankings.js" />
+    <Content Include="Styles\RegisterPage.css" />
+    <Content Include="Html\RegisterPage.html" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\app.js" />
     <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
@@ -191,12 +191,12 @@
     <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
     <Content Include="Scripts\knockout-3.4.2.debug.js" />
     <Content Include="Scripts\knockout-3.4.2.js" />
-    <Content Include="Settings.html" />
-    <Content Include="Settings.js" />
-    <Content Include="SinglePlayerMenuPage.css" />
-    <Content Include="SinglePlayerMenuPage.html" />
-    <Content Include="UserRankings.html" />
-    <Content Include="validation.js" />
+    <Content Include="Html\Settings.html" />
+    <Content Include="JavaScripts\Settings.js" />
+    <Content Include="Styles\SinglePlayerMenuPage.css" />
+    <Content Include="Html\SinglePlayerMenuPage.html" />
+    <Content Include="Html\UserRankings.html" />
+    <Content Include="JavaScripts\validation.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -207,7 +207,6 @@
     <Compile Include="Controllers\GameHub.cs" />
     <Compile Include="Controllers\GenerateController.cs" />
     <Compile Include="Controllers\JObect.cs" />
-    <Compile Include="Controllers\MultiController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Migrations\201706181621563_Initial.cs" />
     <Compile Include="Migrations\201706181621563_Initial.Designer.cs">
