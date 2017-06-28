@@ -19,8 +19,8 @@ namespace Maze.Controllers
         private MazeContext db = new MazeContext();
 
 
-        //// GET: api/Users/5
-        //[ResponseType(typeof(User))]
+        // GET: api/Users/5
+        [ResponseType(typeof(User))]
         [ActionName("GetUser")]
         //[Route("api/Users/GetUser/{name}/{password}")]
         public IHttpActionResult GetUser(string name, string password)
@@ -31,10 +31,14 @@ namespace Maze.Controllers
             {
                 return NotFound();
             }
-            //if (user.password == ComputeHash(pass))
-            //{
-            return Ok(user);
-            //}
+            else if (user.password == ComputeHash(password))
+            {
+                return Ok(user);
+            }
+            else
+            {
+                return NotFound();
+            }
             
         }
 
