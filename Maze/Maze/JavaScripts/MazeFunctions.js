@@ -6,7 +6,7 @@
 
         if (rows > 0 && cols > 0 && !(name == "")) {
         $('#myLoader').show();
-        $.getJSON("api/Single/" + name + "/" + rows + "/" + cols,
+        $.getJSON("../api/Single/" + name + "/" + rows + "/" + cols,
             function(data) {
                 //var mazemaze = $("#mazeCanvas").drawMaze(data);
                 var mazeData = data.Maze; // the matrix containing the maze cells
@@ -45,7 +45,7 @@
     $("#solveLink").click(function (event) {
         var name = $("#mazeName").val();
         var algorithmType = document.getElementById("algoSelect").selectedIndex;
-        $.getJSON("api/Single/" + name + "/" + algorithmType,
+        $.getJSON("../api/Single/" + name + "/" + algorithmType,
             function (data) {
                 $("#mazeCanvas").solveMaze(data);
 
@@ -53,6 +53,7 @@
     }); 
 
     document.onkeydown = function (e) {
+        alert("MF");
         switch (e.keyCode) {
         case 37:
             //left
@@ -72,28 +73,4 @@
             break;
         }
     }
-
-    
-
-    $("#JoinLink").click(function (event) {
-  
-        var name = $("#mazeName").val();
-        $.getJSON("api/Single/" + name ,
-            function (data) {
-
-            });
-    });
-
-    //$("#ListLink").click(function (event) {
-    //    // Call the Start method on the hub
-    //    $.getJSON("api/Generate/" + name,
-    //        function (data) {
-    //            for (var i = 0; i < data.length; i++) {
-    //                var a = data[i].text;
-    //                $("#ListLink").append($("<option>", a));
-    //            }
-
-    //        });
-    //});
-    
 });
