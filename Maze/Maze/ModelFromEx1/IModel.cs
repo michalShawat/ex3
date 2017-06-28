@@ -89,7 +89,7 @@ namespace Maze.ModelFromEx1
         /// </summary>
         /// <param name="move">The move.</param>
         /// <param name="client">The client.</param>
-        void PlayMaze(string move, string client);
+        string PlayMaze(string client);
 
         /// <summary>
         /// Closes the maze.

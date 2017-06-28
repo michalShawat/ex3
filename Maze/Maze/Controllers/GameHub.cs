@@ -27,12 +27,15 @@ namespace Maze.Controllers
         private static Dictionary<string, string> gamesWaiting =
             new Dictionary<string, string>();
 
+        private static Dictionary<string, string> usersToGames =
+            new Dictionary<string, string>();
+
         public void Start(string name, int rows, int cols)
         {
             string clientId = Context.ConnectionId;
             myModel.StartMaze(name, rows, cols, clientId);
 
-            // add to waiting dictionary
+            // add to 'waiting' dictionary
             gamesWaiting.Add(name, clientId);
         }
 
@@ -41,14 +44,21 @@ namespace Maze.Controllers
             Clients.Client(Context.ConnectionId).parseList(myModel.ListMaze());
         }
 
+        public void Play(string direction)
+        {
+            // find second player's id
+            string secondClientId = myModel.PlayMaze(Context.ConnectionId);
+
+            // update second player
+            Clients.Client(secondClientId).updateSecondMaze(direction);
+        }
+
         public void Join(string name)
         {
             string secondClientId = gamesWaiting[name];
             string clientId = Context.ConnectionId;
             Maze maze = myModel.JoinMaze(name, clientId);
-
-            // add to playing dictionary?
-
+            
             // remove the old game
             gamesWaiting.Remove(name);
 
@@ -61,11 +71,11 @@ namespace Maze.Controllers
             Clients.Client(secondClientId).drawTheMaze(m);
             Clients.Client(secondClientId).drawTheOtherMaze(m);
 
-            // add to new dictionary
-            List<string> players = new List<string>();
-            players.Add(clientId);
-            players.Add(secondClientId);
-            gamesToUsers.Add(name,players);
+            //// add to new dictionary
+            //List<string> players = new List<string>();
+            //players.Add(clientId);
+            //players.Add(secondClientId);
+            //gamesToUsers.Add(name,players);
         }
 
         public void Connect(string name)

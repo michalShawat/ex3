@@ -96,16 +96,7 @@
             break;
         }
     };
-
-    //$.fn.list = function (data) {
-    //    $.each(items, function (i, item) {
-    //        $("#ListLink").append($("<option>", {
-    //            value: item.value,
-    //            text: item.text
-    //        }));
-    //    });
-    //}
-
+    
     $.fn.solveMaze = function(data) {
         var length = data.length;
         context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);

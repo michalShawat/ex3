@@ -232,7 +232,7 @@ namespace Maze.ModelFromEx1
         /// </summary>
         /// <param name="move">The move.</param>
         /// <param name="client">The client.</param>
-        public void PlayMaze(string move, string client)
+        public string PlayMaze(string client)
         {
             // find the game
             Game game = this.GamesPlaying[this.playing[client]];
@@ -247,12 +247,8 @@ namespace Maze.ModelFromEx1
             {
                 secondClient = game.SecondPlayer;
             }
-
-            // print to the second client
-
-            JObject mazeObj = new JObject();
-            mazeObj["Name"] = this.playing[client];
-            mazeObj["Direction"] = move;
+            
+            return secondClient;
         }
 
         /// <summary>
