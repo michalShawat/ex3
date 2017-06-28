@@ -6,8 +6,6 @@
     self.UserName = ko.observable();
     self.Password = ko.observable();
     self.Email = ko.observable();
-    self.Date = ko.observable();
-   
 
     self.addUser = function () {
         //self.getUserDetails = function (user) {
@@ -18,9 +16,9 @@
 
         var user = {
             username: self.UserName(),
-            password:hash(self.Password()),
-            email: self.Email(),
-            date: self.Date(),
+            password: self.Password(),
+            email: self.Email()
+            
             //Wins: self.newUser.Wins(),
            // Losses: self.newUser.Losses()
         };
@@ -33,8 +31,7 @@
     // Fetch the initial data
    // getAllUsers();
 
+
+
 };
 ko.applyBindings(new ViewModel()); // sets up the data binding
-
-
-

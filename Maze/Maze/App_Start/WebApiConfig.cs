@@ -16,11 +16,24 @@ namespace Maze
             // Web API routes
             config.MapHttpAttributeRoutes();
 
-            //config.Routes.MapHttpRoute(
-            //    name: "DefaultApi",
-            //    routeTemplate: "api/{controller}/{id}",
-            //    defaults: new { id = RouteParameter.Optional }
-            //);
+            /*config.Routes.MapHttpRoute(
+            name: "GetUser",
+            routeTemplate: "api/{controller}/{action}/{name}",
+            defaults: new { controller = "Users" }
+            );*/
+
+
+            config.Routes.MapHttpRoute(
+                name: "GetUser",
+                routeTemplate: "api/{controller}/{action}/{name}/{password}",
+                defaults: new { controller = "Users"}
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "DefaultApi",
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
 
             config.Routes.MapHttpRoute(
                 name: "Generate",
@@ -40,11 +53,7 @@ namespace Maze
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            config.Routes.MapHttpRoute(
-            name: "GetUsers",
-            routeTemplate: "api/{controller}/{name}",
-            defaults: new { controller = "Users" }
-            );
+            
         }
     }
 }

@@ -158,6 +158,8 @@
     <Content Include="Images\grass.jpg" />
     <Content Include="Images\loginPic.png" />
     <Content Include="Images\marco.jpg" />
+    <Content Include="JavaScripts\MenuPlugin.js" />
+    <Content Include="Scripts\Login.js" />
     <Content Include="JavaScripts\MazeFunctions.js" />
     <Content Include="ModelFromEx1\CompareMazeSolvers.dll" />
     <Content Include="Global.asax" />

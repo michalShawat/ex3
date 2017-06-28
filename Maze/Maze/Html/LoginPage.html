@@ -20,40 +20,37 @@
             <h3>Log in</h3>
             <p>Use a local account to log in.</p>
         </div>
+    <form id="myForm">
+        <div class="imgcontainer">
+            <img src="../Images/loginPic.png" alt="Marco" class="Marco">
+        </div>
+        Username:<br />
+        <input type="text"
+               name="Username" id="Username" placeholder="Enter Username" value="" required><br /><br />
+        Password:<br />
+        <input type="password" id="Password" name="Password" value="" placeholder="Enter Password" required ><br /><br />
 
-        <form action="/action_page.php">
-            <div class="imgcontainer">
-                <img src="../Images/loginPic.png" alt="Marco" class="Marco">
-            </div>
+        <!--<input id="date" name="date" />-->
+        <br />
+        <button id="btnLogin" type="button">Login </button>
 
-            <div class="container">
-                <label><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+        <input type="checkbox" checked="checked"> Remember me
+        <br />
+        <a href="RegisterPage.html">Register as a new user</a>
+    </form>
+     <script src="../Scripts/Login.js"></script>
+    <script src="../Scripts/jquery-3.1.1.js"></script>
+    <script src="../Scripts/knockout-3.4.2.js"></script>
 
-                <label><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="Password" required>
-
-                <button type="submit">Login</button>
-                <input type="checkbox" checked="checked"> Remember me
-            </div>
-            <a href="RegisterPage.html">Register as a new user</a>
-        </form>
-
-
-        <!--<form action="/action_page.php">
-            Username :<br />
-            <input type="text" name="Username" value=""><br />
-            Password:<br />
-            <input type="text" name="Password" value=""><br /><br />
-            <input type="submit" value="Login">
-        </form>-->
-        <!--<a href="url">Register as a new user</a>-->
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 
 </body>
 </html>
 
 
-<div class="topnav"></div>
 
 
 

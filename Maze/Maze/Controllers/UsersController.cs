@@ -6,6 +6,8 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Maze.Models;
@@ -16,23 +18,30 @@ namespace Maze.Controllers
     {
         private MazeContext db = new MazeContext();
 
-        // GET: api/Users
-        public IQueryable<User> GetUsers()
-        {
-            return db.Users.OrderBy(m => m.wins - m.losses);
-        }
 
-        // GET: api/Users/5
-        [ResponseType(typeof(User))]
-        public IHttpActionResult GetUser(string id)
+        //// GET: api/Users/5
+        //[ResponseType(typeof(User))]
+        [ActionName("GetUser")]
+        //[Route("api/Users/GetUser/{name}/{password}")]
+        public IHttpActionResult GetUser(string name, string password)
         {
-            User user = db.Users.Find(id);
+            User user = db.Users.Find(name);
+  
             if (user == null)
             {
                 return NotFound();
             }
-
+            //if (user.password == ComputeHash(pass))
+            //{
             return Ok(user);
+            //}
+            
+        }
+
+        // GET: api/Users
+        public IQueryable<User> GetUsers()
+        {
+            return db.Users.OrderBy(m => m.wins - m.losses);
         }
 
         // PUT: api/Users/5
@@ -74,10 +83,13 @@ namespace Maze.Controllers
         [ResponseType(typeof(User))]
         public IHttpActionResult PostUser(User user)
         {
+           
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+
+            user.password = ComputeHash(user.password);
 
             db.Users.Add(user);
             
@@ -129,5 +141,17 @@ namespace Maze.Controllers
         {
             return db.Users.Count(e => e.username == id) > 0;
         }
+
+
+        string ComputeHash(string input)
+        {
+            SHA1 sha = SHA1.Create();
+            byte[] buffer = Encoding.ASCII.GetBytes(input);
+            byte[] hash = sha.ComputeHash(buffer);
+            string hash64 = Convert.ToBase64String(hash);
+            return hash64;
+        }
     }
+
 }
+

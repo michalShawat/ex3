@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../Styles/LoginPage.css">
     <meta charset="utf-8" />
-   
+    <link rel="shortcut icon" href="#" />
 
 </head>
 <body>
@@ -30,7 +30,7 @@
         <input type="password" id="PasswordAgain" name="PasswordAgain" placeholder="Enter Password Again" required><br/><br/>
         Email:<br/>
         <input  type="email" id="email" name="Email" placeholder="Enter Email" value="" data-bind="value:Email" required>
-        <input id="date" name="date" />
+
         <br/><br/>
         <button type="submit">Register </button>
 
@@ -40,6 +40,7 @@
     <script src="../Scripts/jquery-3.1.1.js"></script>
     <script src="../Scripts/knockout-3.4.2.js"></script>
     <script src="../Scripts/app.js"></script>
+   
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -59,11 +60,6 @@
 
     });
 </script>
-
-    <script type="text/javascript">
-        document.getElementById('date').value = Date();
-    </script>
-
 
 </body>
 </html>
