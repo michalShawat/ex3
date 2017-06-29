@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+   
     var rows, cols;
     var curCol, curRow;
     var secCurCol, secCurRow;
@@ -95,6 +96,7 @@
     }
 
     game.client.updateSecondMaze = function (data) {
+
         secondContext = document.getElementById("mazeCanvasPlayer1").getContext("2d");
         switch (data) {
         case "l":
@@ -157,7 +159,9 @@
     // Start the connection
     $.connection.hub.start().done(function() {
         $("#StartMultiLink").click(function () {
+          
             if (sessionStorage.getItem("UserName")) {
+                $("#waitImg").show();
                 var name = $("#mazeName").val();
                 var rows = $("#mazeRows").val();
                 var cols = $("#mazeCols").val();
