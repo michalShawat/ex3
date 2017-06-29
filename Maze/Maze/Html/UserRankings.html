@@ -8,13 +8,10 @@
 </head>
 <body>
     <script src="../JavaScripts/userRankings.js"></script>
-<div id="myTopnav">
-  
-    <script>
-        $("#myTopnav").load("MenuPlugIn.html");
-    </script>
-</div>
-<script src="../Scripts/jquery-3.1.1.js"></script>
+    <div id="myTopnav">
+        <script src="../Scripts/jquery-3.1.1.js"></script>
+        <script src="../JavaScripts/MenuPlugin.js"></script>
+    </div>
    
 <!-- ko if:currUser() -->
 <ul class="list-unstyled" data-bind="foreach: users"></ul>

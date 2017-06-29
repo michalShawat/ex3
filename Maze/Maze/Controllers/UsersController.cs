@@ -172,7 +172,7 @@ namespace Maze.Controllers
             {
                 user.wins++;
             }
-            else
+            else if(flag==0)
             {
                 user.losses++;
             }

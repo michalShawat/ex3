@@ -145,12 +145,18 @@
 
     // Start the connection
     $.connection.hub.start().done(function() {
-        $("#StartMultiLink").click(function() {
-            var name = $("#mazeName").val();
-            var rows = $("#mazeRows").val();
-            var cols = $("#mazeCols").val();
-            // Call the Start method on the hub
-            game.server.start(name, rows, cols);
+        $("#StartMultiLink").click(function () {
+            if (sessionStorage.getItem("UserName")) {
+                var name = $("#mazeName").val();
+                var rows = $("#mazeRows").val();
+                var cols = $("#mazeCols").val();
+                // Call the Start method on the hub
+                game.server.start(name, rows, cols);
+            }
+            else {
+                alert("you have to Register or Log in first!")
+            }
+            
         });
 
         $("#ListLink").click(function (event) {
@@ -159,11 +165,17 @@
         });
 
         $("#JoinLink").click(function (event) {
-            $('#myLoader').show();
-            var index = document.getElementById("ListLink").selectedIndex;
-            var option = document.getElementById("ListLink").options;
-            game.server.join(option[index].text);
-            $('#myLoader').hide();
+            if (sessionStorage.getItem("UserName")) {
+                $('#myLoader').show();
+                var index = document.getElementById("ListLink").selectedIndex;
+                var option = document.getElementById("ListLink").options;
+                game.server.join(option[index].text);
+                $('#myLoader').hide();
+            }
+            else {
+                alert("you have to Register or Log in first!")
+            }
+            
         });
 
         $.fn.movePlayer = function (direction) {
@@ -223,7 +235,7 @@
 
                     if (curCol == endCol && curRow == endRow) {
                         alert("you won!");
-                        var name = sessionStorage.UserName;
+                        var name = Ssessiontorage.UserName;
                         $.getJSON("../api/Users/UpdateUser/" + name + "/" + "1").done(function (data) {
                             alert("welcome!");
                         });
