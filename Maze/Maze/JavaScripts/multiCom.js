@@ -12,6 +12,7 @@
     var game = $.connection.gameHub;
 
     game.client.parseList = function (data) {
+        $("#ListLink").html("");
         for (var i = 0; i < data.length; i++) {
             $("#ListLink").append($("<option>" + data[i] + "</option>"));
         }
