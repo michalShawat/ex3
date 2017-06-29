@@ -2,9 +2,8 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <link rel="stylesheet" type="text/css" href="../Styles/LoginPage.css">
-
-    <link href="../Styles/MenuPlugIn.css" rel="stylesheet" />
     <meta charset="utf-8" />
+    <link href="../Styles/MenuPlugIn.css" rel="stylesheet" />
     <link rel="shortcut icon" href="#" />
 
 </head>
@@ -13,30 +12,31 @@
         <script src="../Scripts/jquery-3.1.1.js"></script>
         <script src="../JavaScripts/MenuPlugin.js"></script>
     </div>
-<div>
+    
     <div>
-        <h3>Register</h3>
-        <p>Fill out your details.</p>
-    </div>
-    <form data-bind="submit: addUser" id="myForm">
-        <div class="imgcontainer">
-            <img src="../Images/loginPic.png" alt="Marco" class="Marco">
+        <div>
+            <h3>Register</h3>
+            <p>Fill out your details.</p>
         </div>
-        Username:<br/>
-        <input type="text" name="Username" placeholder="Enter Username" value="" data-bind="value:UserName" required><br/><br/>
-        Password:<br/>
-        <input type="password" id="Password" name="Password" value="" placeholder="Enter Password" data-bind="value:Password" required><br/><br/>
-        Password again:<br/>
-        <input type="password" id="PasswordAgain" name="PasswordAgain" placeholder="Enter Password Again" required><br/><br/>
-        Email:<br/>
-        <input  type="email" id="email" name="Email" placeholder="Enter Email" value="" data-bind="value:Email" required>
+        <form data-bind="submit: addUser" id="myForm">
+            <div class="imgcontainer">
+                <img src="../Images/loginPic.png" alt="Marco" class="Marco">
+            </div>
+            Username:<br />
+            <input type="text" name="Username" placeholder="Enter Username" value="" data-bind="value:UserName" required><br /><br />
+            Password:<br />
+            <input type="password" id="Password" name="Password" value="" placeholder="Enter Password" data-bind="value:Password" required><br /><br />
+            Password again:<br />
+            <input type="password" id="PasswordAgain" name="PasswordAgain" placeholder="Enter Password Again" required><br /><br />
+            Email:<br />
+            <input type="email" id="email" name="Email" placeholder="Enter Email" value="" data-bind="value:Email" required>
 
-        <br/><br/>
-        <button id="Register" type="submit">Register </button>
+            <br /><br />
+            <button type="submit">Register </button>
 
 
-    </form>
-</div>
+        </form>
+    </div>
     <script src="../Scripts/jquery-3.1.1.js"></script>
     <script src="../Scripts/knockout-3.4.2.js"></script>
     <script src="../Scripts/app.js"></script>
@@ -47,19 +47,18 @@
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
     <script src="../JavaScripts/validation.js"></script>
-<script>
-    $("#myForm").validate({
-        rules: {
-            Password: {
-                required: true,
-            },
-            PasswordAgain: {
-                equalTo: "#Password"
+    <script>
+        $("#myForm").validate({
+            rules: {
+                Password: {
+                    required: true,
+                },
+                PasswordAgain: {
+                    equalTo: "#Password",
+                }
             }
-        }
-
-    });
-</script>
+        });
+    </script>
 
 </body>
 </html>

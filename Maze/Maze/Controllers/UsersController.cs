@@ -22,11 +22,11 @@ namespace Maze.Controllers
         // GET: api/Users/5
         [ResponseType(typeof(User))]
         [ActionName("GetUser")]
-        [Route("api/Users/GetUser/{name}/{password}")]
+        //[Route("api/Users/GetUser/{name}/{password}")]
         public IHttpActionResult GetUser(string name, string password)
         {
             User user = db.Users.Find(name);
-  
+
             if (user == null)
             {
                 return NotFound();
@@ -39,22 +39,17 @@ namespace Maze.Controllers
             {
                 return NotFound();
             }
-            
+
         }
 
-        // GET: api/Users/GetUsers
-        [ActionName("GetUsers")]
-        [Route("api/Users")]
-        [HttpGet()]
+        // GET: api/Users
         public IQueryable<User> GetUsers()
         {
-            return db.Users.OrderByDescending(m => m.wins - m.losses);
+            return db.Users.OrderBy(m => m.wins - m.losses);
         }
 
         // PUT: api/Users/5
         [ResponseType(typeof(void))]
-        [ActionName("PutUser")]
-        //[Route("api/Users/PutUser/{name}/{password}")]
         public IHttpActionResult PutUser(string id, User user)
         {
             if (!ModelState.IsValid)
@@ -89,12 +84,10 @@ namespace Maze.Controllers
         }
         //post = put for the first time, put = update
         // POST: api/Users
-        [Route("api/Users/PostUser/{name}/{password}")]
         [ResponseType(typeof(User))]
-        [HttpPost()]
         public IHttpActionResult PostUser(User user)
         {
-           
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -103,7 +96,7 @@ namespace Maze.Controllers
             user.password = ComputeHash(user.password);
 
             db.Users.Add(user);
-            
+
             try
             {
                 db.SaveChanges();
@@ -175,11 +168,11 @@ namespace Maze.Controllers
             {
                 return NotFound();
             }
-            else if (flag==1)
+            else if (flag == 1)
             {
                 user.wins++;
             }
-            else if(flag==0)
+            else
             {
                 user.losses++;
             }
@@ -190,4 +183,3 @@ namespace Maze.Controllers
     }
 
 }
-

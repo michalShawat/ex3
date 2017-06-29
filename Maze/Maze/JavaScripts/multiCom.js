@@ -104,8 +104,11 @@
             secondContext.drawImage(playerImg, cellWidth * secCurCol, cellHeight * secCurRow, cellWidth, cellHeight);
                 
                 // if won
-                if (secCurCol == endCol && secCurRow == endRow) {
+            if (secCurCol == endCol && secCurRow == endRow) {
+                var name = sessionStorage.UserName;
+                $.getJSON("../api/Users/UpdateUser/" + name + "/" + "0").done(function (data) {
                     alert("you lost!");
+                });           
                 }
             
             break;
@@ -115,7 +118,9 @@
                 secCurRow = secCurRow - 1;
             secondContext.drawImage(playerImg, cellWidth * secCurCol, cellHeight * secCurRow, cellWidth, cellHeight);
                 if (secCurCol == endCol && secCurRow == endRow) {
-                    alert("you lost!");
+                    $.getJSON("../api/Users/UpdateUser/" + name + "/" + "0").done(function (data) {
+                        alert("you lost!");
+                    });
                 }
             
             break;
@@ -126,7 +131,9 @@
                 secCurCol = secCurCol + 1;
             secondContext.drawImage(playerImg, cellWidth * secCurCol, cellHeight * secCurRow, cellWidth, cellHeight);
                 if (secCurCol == endCol && secCurRow == endRow) {
-                    alert("you lost!");
+                    $.getJSON("../api/Users/UpdateUser/" + name + "/" + "0").done(function (data) {
+                        alert("you lost!");
+                    });
                 }
             
             break;
@@ -137,8 +144,11 @@
                 secCurRow = secCurRow + 1;
             secondContext.drawImage(playerImg, cellWidth * secCurCol, cellHeight * secCurRow, cellWidth, cellHeight);
                 if (secCurCol == endCol && secCurRow == endRow) {
-                    alert("you lost!");
-                }
+                    $.getJSON("../api/Users/UpdateUser/" + name + "/" + "0").done(function (data) {
+                        alert("you lost!");
+                    });
+            }
+
             
             break;
         }
@@ -194,10 +204,10 @@
 
                     // if won
                     if (curCol == endCol && curRow == endRow) {
-                        alert("you won!");
+              
                         var name = sessionStorage.UserName;
                         $.getJSON("../api/Users/UpdateUser/" + name + "/" + "1").done(function (data) {
-                            alert("welcome!");
+                            alert("you won!");
                         });
                     }
                 }
@@ -214,10 +224,9 @@
                     game.server.play("u");
 
                     if (curCol == endCol && curRow == endRow) {
-                        alert("you won!");
                         var name = sessionStorage.UserName;
                         $.getJSON("../api/Users/UpdateUser/" + name + "/" + "1").done(function (data) {
-                            alert("welcome!");
+                            alert("you won!");
                         });
                     }
                 }
@@ -234,10 +243,10 @@
                     game.server.play("r");
 
                     if (curCol == endCol && curRow == endRow) {
-                        alert("you won!");
+                       
                         var name = Ssessiontorage.UserName;
                         $.getJSON("../api/Users/UpdateUser/" + name + "/" + "1").done(function (data) {
-                            alert("welcome!");
+                            alert("you won!");
                         });
                     }
                 }
@@ -254,10 +263,10 @@
                     game.server.play("d");
 
                     if (curCol == endCol && curRow == endRow) {
-                        alert("you won!");
+                        
                         var name = sessionStorage.UserName;
                         $.getJSON("../api/Users/UpdateUser/" + name + "/" + "1").done(function (data) {
-                            alert("welcome!");
+                            alert("you won!");
                         });
                     }
                 }
