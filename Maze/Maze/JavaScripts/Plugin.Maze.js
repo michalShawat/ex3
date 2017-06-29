@@ -31,7 +31,7 @@
         cellHeight = mazeCanvas.height / rows;
         for (var i = 0; i < rows; i++) {
             for (var j = 0; j < cols; j++) {
-                if (mazeData[i * rows + j] == 1) {
+                if (mazeData[i * cols + j] == 1) {
                     context.fillRect(cellWidth * j, cellHeight * i, cellWidth, cellHeight);
                 }
             }
@@ -96,10 +96,10 @@
     
     $.fn.solveMaze = function(data) {
         var length = data.length;
-        context.clearRect(cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
+        context.clearRect(cellWidth * curCol, cellHeight * curRow, cellWidth, cellHeight);
         curCol = startCol;
         curRow = startRow;
-        context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellHeight, cellWidth);
+        context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellWidth, cellHeight);
         (function myfunc(i) {
             switch ((data[i])) {
                 case "0":
@@ -128,7 +128,7 @@
                 }
             default:{}
             }
-            if (i > 0) setTimeout(function () { myfunc(--i); }, 500);
+            if (i >= 0) setTimeout(function () { myfunc(--i); }, 500);
         }(length));
 };
 })(jQuery);

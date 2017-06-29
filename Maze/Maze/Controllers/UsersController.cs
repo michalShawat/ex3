@@ -22,7 +22,7 @@ namespace Maze.Controllers
         // GET: api/Users/5
         [ResponseType(typeof(User))]
         [ActionName("GetUser")]
-        //[Route("api/Users/GetUser/{name}/{password}")]
+        [Route("api/Users/GetUser/{name}/{password}")]
         public IHttpActionResult GetUser(string name, string password)
         {
             User user = db.Users.Find(name);
@@ -53,6 +53,8 @@ namespace Maze.Controllers
 
         // PUT: api/Users/5
         [ResponseType(typeof(void))]
+        [ActionName("PutUser")]
+        //[Route("api/Users/PutUser/{name}/{password}")]
         public IHttpActionResult PutUser(string id, User user)
         {
             if (!ModelState.IsValid)
@@ -87,7 +89,9 @@ namespace Maze.Controllers
         }
         //post = put for the first time, put = update
         // POST: api/Users
+        [Route("api/Users/PostUser/{name}/{password}")]
         [ResponseType(typeof(User))]
+        [HttpPost()]
         public IHttpActionResult PostUser(User user)
         {
            
