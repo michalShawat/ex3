@@ -45,7 +45,7 @@ namespace Maze.Controllers
         // GET: api/Users
         public IQueryable<User> GetUsers()
         {
-            return db.Users.OrderBy(m => m.wins - m.losses);
+            return db.Users.OrderByDescending(m => m.wins - m.losses);
         }
 
         // PUT: api/Users/5
