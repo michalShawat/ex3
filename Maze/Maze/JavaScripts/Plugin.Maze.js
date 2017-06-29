@@ -13,8 +13,6 @@
         exitRow, exitCol, // the exit position
         playerImage, // player's icon (of type Image)
         exitImage // exit's icon (of type Image)
-        ///isEnabled // is the board enabled (i.e., player can move)
-        //,function (direction, playerRow, playerCol)
     ) {
         startRow = myStartRow;
         startCol = myStartCol;
@@ -31,7 +29,6 @@
         context = mazeCanvas.getContext("2d");
         cellWidth = mazeCanvas.width / cols;
         cellHeight = mazeCanvas.height / rows;
-        //var l = mazeStr.length;
         for (var i = 0; i < rows; i++) {
             for (var j = 0; j < cols; j++) {
                 if (mazeData[i * rows + j] == 1) {
@@ -39,7 +36,7 @@
                 }
             }
         };
-  
+        // draw the player and exit
         context.drawImage(playerImage, cellWidth * startCol, cellHeight * startRow, cellWidth, cellHeight);
         context.drawImage(exitImage, cellWidth * exitCol, cellHeight * exitRow, cellWidth, cellHeight);
         return this;
@@ -133,6 +130,5 @@
             }
             if (i > 0) setTimeout(function () { myfunc(--i); }, 500);
         }(length));
-   
 };
 })(jQuery);

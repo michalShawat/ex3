@@ -53,7 +53,6 @@
     }); 
 
     document.onkeydown = function (e) {
-        alert("MF");
         switch (e.keyCode) {
         case 37:
             //left

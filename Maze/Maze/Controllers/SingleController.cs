@@ -36,27 +36,16 @@ namespace Maze.Controllers
         }
 
         // GET: api/single/mazeName/4/5
-
+        //[ActionName("GetMaze")]
+        //[Route("api/Single")]
+        [HttpGet()]
         public JObject GetMaze(string name, int rows, int cols)
         {
             Maze maze = myModel.GenerateMaze(name, rows, cols);
             JObject obj = JObject.Parse(maze.ToJSON());
             return obj;
         }
-
-        // GET: api/List
-        //public string GetList()
-        //{
-        //    return myModel.ListMaze();
-        //}
-
-
-        //// GET: api/Single
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
+        
         // POST: api/Single
         public void Post([FromBody]string value)
         {

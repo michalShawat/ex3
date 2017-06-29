@@ -72,10 +72,10 @@
         curRow = data.Start.Row;
         curCol = data.Start.Col;
         var mazeData = data.Maze;
-        var rows = data.Rows;
-        var cols = data.Cols;
-        var startRow = data.Start.Row;
-        var startCol = data.Start.Col;
+        rows = data.Rows;
+        cols = data.Cols;
+        startRow = data.Start.Row;
+        startCol = data.Start.Col;
         var exitRow = data.End.Row;
         var exitCol = data.End.Col; // the exit position
         var playerImage = document.getElementById("marco"); // player's icon (of type Image)
@@ -154,7 +154,7 @@
                 game.server.start(name, rows, cols);
             }
             else {
-                alert("you have to Register or Log in first!")
+                alert("you have to Register or Log in first!");
             }
             
         });
@@ -175,7 +175,6 @@
             else {
                 alert("you have to Register or Log in first!")
             }
-            
         });
 
         $.fn.movePlayer = function (direction) {
