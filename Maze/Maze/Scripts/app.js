@@ -24,7 +24,8 @@
         };
         $.post(usersUri, user).done(function (item) {
             alert("ahoi!");
-           // self.users.push(item);
+            // self.users.push(item);
+
         });
     }
     //getUsers();

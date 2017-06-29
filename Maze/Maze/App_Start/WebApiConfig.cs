@@ -30,6 +30,12 @@ namespace Maze
             );
 
             config.Routes.MapHttpRoute(
+                name: "UpdateUser",
+                routeTemplate: "api/{controller}/{action}/{name}/{flag}",
+                defaults: new { controller = "Users" }
+);
+
+            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }

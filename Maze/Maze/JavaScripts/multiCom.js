@@ -183,6 +183,10 @@
                     // if won
                     if (curCol == endCol && curRow == endRow) {
                         alert("you won!");
+                        var name = sessionStorage.UserName;
+                        $.getJSON("../api/Users/UpdateUser/" + name + "/" + "1").done(function (data) {
+                            alert("welcome!");
+                        });
                     }
                 }
                 break;
@@ -199,6 +203,10 @@
 
                     if (curCol == endCol && curRow == endRow) {
                         alert("you won!");
+                        var name = sessionStorage.UserName;
+                        $.getJSON("../api/Users/UpdateUser/" + name + "/" + "1").done(function (data) {
+                            alert("welcome!");
+                        });
                     }
                 }
                 break;
@@ -215,6 +223,10 @@
 
                     if (curCol == endCol && curRow == endRow) {
                         alert("you won!");
+                        var name = sessionStorage.UserName;
+                        $.getJSON("../api/Users/UpdateUser/" + name + "/" + "1").done(function (data) {
+                            alert("welcome!");
+                        });
                     }
                 }
                 break;
@@ -231,6 +243,10 @@
 
                     if (curCol == endCol && curRow == endRow) {
                         alert("you won!");
+                        var name = sessionStorage.UserName;
+                        $.getJSON("../api/Users/UpdateUser/" + name + "/" + "1").done(function (data) {
+                            alert("welcome!");
+                        });
                     }
                 }
                 break;

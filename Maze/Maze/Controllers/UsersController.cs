@@ -155,6 +155,31 @@ namespace Maze.Controllers
             string hash64 = Convert.ToBase64String(hash);
             return hash64;
         }
+
+        [ResponseType(typeof(User))]
+        [ActionName("UpdateUser")]
+        [Route("api/Users/UpdateUser/{name}/{flag}")]
+        [HttpGet()]
+        public IHttpActionResult UpdateUser(string name, int flag)
+        {
+            User user = db.Users.Find(name);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+            else if (flag==1)
+            {
+                user.wins++;
+            }
+            else
+            {
+                user.losses++;
+            }
+            db.SaveChanges();
+            return Ok(user);
+        }
+
     }
 
 }

@@ -3,8 +3,12 @@
     var password = $("#Password").val();
     var usersUri = "../api/Users/GetUser/" + name + "/" + password;
     $.getJSON(usersUri, name, password).done(function (data) {
-        alert("ahoi!");
+        alert("welcome!");
+
+        // update the session storage
+        sessionStorage.UserName = name;
     });
+
 
 
 });
