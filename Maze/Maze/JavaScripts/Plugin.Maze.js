@@ -46,7 +46,7 @@
         switch (direction) {
         case "l":
             //left
-                if (mazeStr[(curRow * rows) + curCol - 1] != 1 && (curCol - 1) >= 0) {
+                if (mazeStr[(curRow * cols) + curCol - 1] != 1 && (curCol - 1) >= 0) {
                 context.clearRect(cellWidth * curCol, cellHeight * curRow, cellWidth, cellHeight);
                 curCol = curCol - 1;
                 context.drawImage(playerImg, cellWidth * curCol, cellHeight * curRow, cellWidth, cellHeight);
@@ -57,7 +57,7 @@
             break;
         case "u":
             //up
-                if (mazeStr[((curRow - 1) * rows) + curCol] != 1 && (curRow - 1) >= 0) {
+                if (mazeStr[((curRow - 1) * cols) + curCol] != 1 && (curRow - 1) >= 0) {
 
                     context.clearRect(cellWidth * curCol, cellHeight * curRow, cellWidth, cellHeight);
                 curRow = curRow - 1;
@@ -69,7 +69,7 @@
             break;
         case "r":
             //right
-                if (mazeStr[(curRow * rows) + curCol + 1] != 1 && (curCol + 1) < cols) {
+                if (mazeStr[(curRow * cols) + curCol + 1] != 1 && (curCol + 1) < cols) {
 
                     context.clearRect(cellWidth * curCol, cellHeight * curRow, cellWidth, cellHeight);
                 curCol = curCol + 1;
@@ -81,7 +81,7 @@
             break;
         case "d":
             //down
-                if (mazeStr[((curRow + 1) * rows) + curCol] != 1 && (curRow + 1) < rows) {
+                if (mazeStr[((curRow + 1) * cols) + curCol] != 1 && (curRow + 1) < rows) {
 
                     context.clearRect(cellWidth * curCol, cellHeight * curRow, cellWidth, cellHeight);
                 curRow = curRow + 1;
