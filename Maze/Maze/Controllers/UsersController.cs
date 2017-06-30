@@ -209,16 +209,16 @@ namespace Maze.Controllers
         }
 
         /// <summary>
-        /// Updates the user.
+        /// Updates the user in winning.
         /// </summary>
         /// <param name="name">The name.</param>
         /// <param name="flag">The flag.</param>
         /// <returns></returns>
         [ResponseType(typeof(User))]
-        [ActionName("UpdateUser")]
-        [Route("api/Users/UpdateUser/{name}/{flag}")]
+        [ActionName("UpdateWin")]
+        [Route("api/Users/UpdateWin/{name}")]
         [HttpGet()]
-        public IHttpActionResult UpdateUser(string name, int flag)
+        public IHttpActionResult UpdateWin(string name)
         {
             User user = db.Users.Find(name);
 
@@ -226,9 +226,31 @@ namespace Maze.Controllers
             {
                 return NotFound();
             }
-            else if (flag == 1)
+            else
             {
                 user.wins++;
+            }
+            db.SaveChanges();
+            return Ok(user);
+        }
+
+        /// <summary>
+        /// Updates the user in losing.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="flag">The flag.</param>
+        /// <returns></returns>
+        [ResponseType(typeof(User))]
+        [ActionName("UpdateLose")]
+        [Route("api/Users/UpdateLose/{name}")]
+        [HttpGet()]
+        public IHttpActionResult UpdateLose(string name)
+        {
+            User user = db.Users.Find(name);
+
+            if (user == null)
+            {
+                return NotFound();
             }
             else
             {

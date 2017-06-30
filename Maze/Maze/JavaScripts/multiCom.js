@@ -103,9 +103,9 @@
 
             // if lost
             if (secCurCol == endCol && secCurRow == endRow) {
+                alert("you lost!");
                 name = sessionStorage.UserName;
-                $.getJSON("../api/Users/UpdateUser/" + name + "/" + "0").done(function(data) {
-                    alert("you lost!");
+                $.getJSON("../api/Users/UpdateLose/" + name).done(function(data) {
                 });
             }
 
@@ -118,9 +118,9 @@
 
             // if lost
             if (secCurCol == endCol && secCurRow == endRow) {
+                alert("you lost!");
                 name = sessionStorage.UserName;
-                $.getJSON("../api/Users/UpdateUser/" + name + "/" + "0").done(function(data) {
-                    alert("you lost!");
+                $.getJSON("../api/Users/UpdateLose/" + name).done(function(data) {
                 });
             }
 
@@ -133,9 +133,9 @@
             secondContext.drawImage(playerImg, cellWidth * secCurCol, cellHeight * secCurRow, cellWidth, cellHeight);
             // if lost
             if (secCurCol == endCol && secCurRow == endRow) {
+                alert("you lost!");
                 name = sessionStorage.UserName;
-                $.getJSON("../api/Users/UpdateUser/" + name + "/" + "0").done(function(data) {
-                    alert("you lost!");
+                $.getJSON("../api/Users/UpdateLose/" + name).done(function(data) {
                 });
             }
 
@@ -148,9 +148,9 @@
             secondContext.drawImage(playerImg, cellWidth * secCurCol, cellHeight * secCurRow, cellWidth, cellHeight);
             // if lost
             if (secCurCol == endCol && secCurRow == endRow) {
+                alert("you lost!");
                 name = sessionStorage.UserName;
-                $.getJSON("../api/Users/UpdateUser/" + name + "/" + "0").done(function(data) {
-                    alert("you lost!");
+                $.getJSON("../api/Users/UpdateLose/" + name).done(function(data) {
                 });
             }
 
@@ -210,10 +210,10 @@
 
                     // if won
                     if (curCol == endCol && curRow == endRow) {
-                        name = sessionStorage.UserName;
-                        $.getJSON("../api/Users/UpdateUser/" + name + "/" + "1").done(function(data) {
-                        });
                         alert("you won!");
+                        name = sessionStorage.UserName;
+                        $.getJSON("../api/Users/UpdateWin/" + name).done(function (data) {
+                        });
                     }
                 }
                 break;
@@ -229,10 +229,10 @@
                     game.server.play("u");
 
                     if (curCol == endCol && curRow == endRow) {
-                        name = sessionStorage.UserName;
-                        $.getJSON("../api/Users/UpdateUser/" + name + "/" + "1").done(function(data) {
-                        });
                         alert("you won!");
+                        name = sessionStorage.UserName;
+                        $.getJSON("../api/Users/UpdateWin/" + name).done(function (data) {
+                        });
                     }
                 }
                 break;
@@ -248,10 +248,10 @@
                     game.server.play("r");
 
                     if (curCol == endCol && curRow == endRow) {
-                        name = sessionStorage.UserName;
-                        $.getJSON("../api/Users/UpdateUser/" + name + "/" + "1").done(function(data) {
-                        });
                         alert("you won!");
+                        name = sessionStorage.UserName;
+                        $.getJSON("../api/Users/UpdateWin/" + name).done(function (data) {
+                        });
                     }
                 }
                 break;
@@ -267,10 +267,10 @@
                     game.server.play("d");
 
                     if (curCol == endCol && curRow == endRow) {
-                        name = sessionStorage.UserName;
-                        $.getJSON("../api/Users/UpdateUser/" + name + "/" + "1").done(function(data) {
-                        });
                         alert("you won!");
+                        name = sessionStorage.UserName;
+                        $.getJSON("../api/Users/UpdateWin/" + name).done(function (data) {
+                        });
                     }
                 }
                 break;
