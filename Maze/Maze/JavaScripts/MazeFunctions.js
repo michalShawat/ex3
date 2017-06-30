@@ -35,7 +35,9 @@
                 );
                 $('#myLoader').hide();
                 document.title = name;
-                });
+            }).fail(function (data) {
+            alert("communication failed");
+        });
 
         } else {
             alert("invalid input, try again");
@@ -49,7 +51,9 @@
             function (data) {
                 $("#mazeCanvas").solveMaze(data);
 
-            });
+            }).fail(function (data) {
+            alert("communication failed");
+        });
     }); 
 
     document.onkeydown = function (e) {

@@ -212,7 +212,6 @@ namespace Maze.Controllers
         /// Updates the user in winning.
         /// </summary>
         /// <param name="name">The name.</param>
-        /// <param name="flag">The flag.</param>
         /// <returns></returns>
         [ResponseType(typeof(User))]
         [ActionName("UpdateWin")]
@@ -238,7 +237,6 @@ namespace Maze.Controllers
         /// Updates the user in losing.
         /// </summary>
         /// <param name="name">The name.</param>
-        /// <param name="flag">The flag.</param>
         /// <returns></returns>
         [ResponseType(typeof(User))]
         [ActionName("UpdateLose")]

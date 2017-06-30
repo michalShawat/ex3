@@ -17,6 +17,8 @@
             alert("welcome!");
             sessionStorage.UserName = user.username;
             window.location.replace("HomePage.html");
+        }).fail(function (data) {
+            alert("username allready taken! please choose another one");
         });
     }
 };

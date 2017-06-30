@@ -11,7 +11,7 @@
          window.location.replace("HomePage.html");
     })
         .fail(function (data) {
-            alert("user not found");
+            alert("user not found or wrong password");
         });
 });
 
