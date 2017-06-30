@@ -4,13 +4,13 @@
     var usersUri = "../api/Users/GetUser/" + name + "/" + password;
 
     $.getJSON(usersUri, name, password).done(function (data) {
-        alert("welcome!");
 
+        alert("welcome!");
         // update the session storage
         sessionStorage.UserName = name;
-    });
-
-
-
+    })
+        .fail(function (data) {
+            alert("user not found");
+        });
 });
 

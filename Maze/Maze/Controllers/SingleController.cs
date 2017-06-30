@@ -14,11 +14,24 @@ namespace Maze.Controllers
 
     using Newtonsoft.Json.Linq;
 
+    /// <summary>
+    /// contriller of the single player game
+    /// </summary>
+    /// <seealso cref="System.Web.Http.ApiController" />
     public class SingleController : ApiController
     {
+        /// <summary>
+        /// My model
+        /// </summary>
         private static IModel myModel = new Model();
 
         // GET: /single/mazeName/0
+        /// <summary>
+        /// Gets the solve.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="algorithmType">Type of the algorithm.</param>
+        /// <returns></returns>
         public string GetSolve(string name, int algorithmType)
         {
             ISearcher<Position> algorithmSearcher;
@@ -35,6 +48,14 @@ namespace Maze.Controllers
             return solution;
         }
 
+
+        /// <summary>
+        /// Gets the maze.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="rows">The rows.</param>
+        /// <param name="cols">The cols.</param>
+        /// <returns></returns>
         // GET: api/single/mazeName/4/5
         //[ActionName("GetMaze")]
         //[Route("api/Single")]
@@ -45,17 +66,33 @@ namespace Maze.Controllers
             JObject obj = JObject.Parse(maze.ToJSON());
             return obj;
         }
-        
-        // POST: api/Single
+
+
+        /// <summary>
+        /// Posts the specified value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        ///    // POST: api/Single
         public void Post([FromBody]string value)
         {
         }
 
+
+        /// <summary>
+        /// Puts the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="value">The value.</param>
         // PUT: api/Single/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
+
+        /// <summary>
+        /// Deletes the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
         // DELETE: api/Single/5
         public void Delete(int id)
         {

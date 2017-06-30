@@ -14,15 +14,29 @@ using Maze.Models;
 
 namespace Maze.Controllers
 {
+    /// <summary>
+    /// controller of the users
+    /// </summary>
+    /// <seealso cref="System.Web.Http.ApiController" />
     public class UsersController : ApiController
     {
+        /// <summary>
+        /// The database
+        /// </summary>
         private MazeContext db = new MazeContext();
 
 
+
+        /// <summary>
+        /// Gets the user.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="password">The password.</param>
+        /// <returns></returns>
         // GET: api/Users/5
         [ResponseType(typeof(User))]
         [ActionName("GetUser")]
-        //[Route("api/Users/GetUser/{name}/{password}")]
+        [Route("api/Users/GetUser/{name}/{password}")]
         public IHttpActionResult GetUser(string name, string password)
         {
             User user = db.Users.Find(name);
@@ -42,12 +56,24 @@ namespace Maze.Controllers
 
         }
 
+
+        /// <summary>
+        /// Gets the users.
+        /// </summary>
+        /// <returns></returns>
         // GET: api/Users
         public IQueryable<User> GetUsers()
         {
             return db.Users.OrderByDescending(m => m.wins - m.losses);
         }
 
+
+        /// <summary>
+        /// Puts the user.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="user">The user.</param>
+        /// <returns></returns>
         // PUT: api/Users/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutUser(string id, User user)
@@ -82,8 +108,14 @@ namespace Maze.Controllers
 
             return StatusCode(HttpStatusCode.NoContent);
         }
-        //post = put for the first time, put = update
+
         // POST: api/Users
+        /// <summary>
+        /// Posts the user.
+        /// </summary>
+        /// <param name="user">The user.</param>
+        /// <returns></returns>
+        //post = put for the first time, put = update
         [ResponseType(typeof(User))]
         public IHttpActionResult PostUser(User user)
         {
@@ -116,6 +148,12 @@ namespace Maze.Controllers
             return CreatedAtRoute("DefaultApi", new { id = user.username }, user);
         }
 
+
+        /// <summary>
+        /// Deletes the user.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         // DELETE: api/Users/5
         [ResponseType(typeof(User))]
         public IHttpActionResult DeleteUser(string id)
@@ -132,6 +170,10 @@ namespace Maze.Controllers
             return Ok(user);
         }
 
+        /// <summary>
+        /// Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
+        /// </summary>
+        /// <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -141,12 +183,22 @@ namespace Maze.Controllers
             base.Dispose(disposing);
         }
 
+        /// <summary>
+        /// Users the exists.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         private bool UserExists(string id)
         {
             return db.Users.Count(e => e.username == id) > 0;
         }
 
 
+        /// <summary>
+        /// Computes the hash.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <returns></returns>
         string ComputeHash(string input)
         {
             SHA1 sha = SHA1.Create();
@@ -156,6 +208,12 @@ namespace Maze.Controllers
             return hash64;
         }
 
+        /// <summary>
+        /// Updates the user.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="flag">The flag.</param>
+        /// <returns></returns>
         [ResponseType(typeof(User))]
         [ActionName("UpdateUser")]
         [Route("api/Users/UpdateUser/{name}/{flag}")]
