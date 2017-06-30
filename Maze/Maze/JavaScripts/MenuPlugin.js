@@ -2,6 +2,7 @@
 $("#myTopnav").load("MenuPlugin.html",
     function() {
         if (sessionStorage.getItem("UserName")) {
+
             document.getElementById("idRegister").textContent = "Hi " + sessionStorage.getItem("UserName");
             document.getElementById("idRegister").herf = "#";
             document.getElementById("idLogin").textContent = "Log Off";

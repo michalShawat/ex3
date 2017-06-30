@@ -8,6 +8,7 @@
         alert("welcome!");
         // update the session storage
         sessionStorage.UserName = name;
+         window.location.replace("HomePage.html");
     })
         .fail(function (data) {
             alert("user not found");

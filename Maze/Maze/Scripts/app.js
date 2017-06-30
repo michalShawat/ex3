@@ -12,13 +12,11 @@
             username: self.UserName(),
             password: self.Password(),
             email: self.Email()
-
-            //Wins: self.newUser.Wins(),
-            // Losses: self.newUser.Losses()
         };
         $.post(usersUri, user).done(function(item) {
             alert("welcome!");
-
+            sessionStorage.UserName = user.username;
+            window.location.replace("HomePage.html");
         });
     }
 };

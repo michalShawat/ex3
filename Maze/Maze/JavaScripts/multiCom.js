@@ -41,7 +41,6 @@
             playerImg, // player's icon (of type Image)
             exitImage); // exit's icon (of type Image)
         $("#myLoader").hide();
-        document.title = name;
     }
 
     document.onkeydown = function(e) {
@@ -164,11 +163,13 @@
     $.connection.hub.start().done(function() {
         $("#StartMultiLink").click(function() {
             if (sessionStorage.getItem("UserName")) {
+                $("#myLoader").show();
                 var name = $("#mazeName").val();
                 var rows = $("#mazeRows").val();
                 var cols = $("#mazeCols").val();
                 // Call the Start method on the hub
                 game.server.start(name, rows, cols);
+                window.document.title = name;
             } else {
                 alert("you have to Register or Log in first!");
             }
@@ -187,6 +188,7 @@
                 var option = document.getElementById("ListLink").options;
                 game.server.join(option[index].text);
                 $('#myLoader').hide();
+                window.document.title = option[index].text;
             } else {
                 alert("you have to Register or Log in first!");
             }
@@ -210,8 +212,8 @@
                     if (curCol == endCol && curRow == endRow) {
                         name = sessionStorage.UserName;
                         $.getJSON("../api/Users/UpdateUser/" + name + "/" + "1").done(function(data) {
-                            alert("you won!");
                         });
+                        alert("you won!");
                     }
                 }
                 break;
@@ -229,8 +231,8 @@
                     if (curCol == endCol && curRow == endRow) {
                         name = sessionStorage.UserName;
                         $.getJSON("../api/Users/UpdateUser/" + name + "/" + "1").done(function(data) {
-                            alert("you won!");
                         });
+                        alert("you won!");
                     }
                 }
                 break;
@@ -248,8 +250,8 @@
                     if (curCol == endCol && curRow == endRow) {
                         name = sessionStorage.UserName;
                         $.getJSON("../api/Users/UpdateUser/" + name + "/" + "1").done(function(data) {
-                            alert("you won!");
                         });
+                        alert("you won!");
                     }
                 }
                 break;
@@ -267,8 +269,8 @@
                     if (curCol == endCol && curRow == endRow) {
                         name = sessionStorage.UserName;
                         $.getJSON("../api/Users/UpdateUser/" + name + "/" + "1").done(function(data) {
-                            alert("you won!");
                         });
+                        alert("you won!");
                     }
                 }
                 break;
